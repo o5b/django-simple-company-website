@@ -1,35 +1,24 @@
 [
 {
   "model": "capture.appointment",
-  "pk": 2,
+  "pk": 10,
   "fields": {
     "phone": "+66 (666) 666-66-66",
     "name": "Анна",
-    "comment": "Давайте обсудим наше сотрудничество",
-    "time": "05.09.2020 12:00",
-    "created": "2020-09-03T12:25:44.707Z"
+    "comment": "test",
+    "time": "10.09.2020 12:00",
+    "created": "2020-09-10T11:17:11.690Z"
   }
 },
 {
   "model": "capture.appointment",
-  "pk": 4,
+  "pk": 11,
   "fields": {
-    "phone": "+22 (222) 222-22-22",
+    "phone": "+44 (444) 444-44-44",
     "name": "Николай",
-    "comment": "Давайте обсудим наше сотрудничество",
-    "time": "04.09.2020 12:00",
-    "created": "2020-09-03T12:31:59.921Z"
-  }
-},
-{
-  "model": "capture.appointment",
-  "pk": 9,
-  "fields": {
-    "phone": "+11 (111) 111-11-11",
-    "name": "",
-    "comment": "",
-    "time": "",
-    "created": "2020-09-03T13:18:37.379Z"
+    "comment": "test",
+    "time": "11.09.2020 12:00",
+    "created": "2020-09-10T11:21:18.703Z"
   }
 },
 {
@@ -280,7 +269,7 @@
   "model": "main.preference",
   "pk": 1,
   "fields": {
-    "hostname": "//localhost:3000",
+    "hostname": "localhost:8000",
     "phone": "+380362-12-34-56",
     "phone_mobile": "+38066-123-45-67",
     "phone_whatsapp": "380661234567",
