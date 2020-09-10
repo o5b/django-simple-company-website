@@ -22,8 +22,8 @@ Recommend installation virtualenv in `.env` folder in project folder.
 
 ## Install
 
-    git clone https://github.com/o5b/django-site-1.git
-    cd django-site-1/
+    git clone https://github.com/o5b/django-simple-company-website.git
+    cd django-simple-company-website/
     python3.7 -m venv .env
     source .env/bin/activate
     pip install -r requirements/base.txt
