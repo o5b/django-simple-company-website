@@ -1,0 +1,147 @@
+.card
+	display block
+	margin-bottom 20px
+	outline none
+	border-radius 10px
+	color unset
+
+	&:hover
+		box-shadow 0 0 20px alpha($black, .1)
+		color unset
+		transform translateY(-15px)
+
+		.card__content
+			border-color transparent
+
+	&-specialist
+		.card__photo
+			padding-top (180 / 245 * 100)%
+
+		.card__content
+			min-height 170px
+			height auto
+
+			@media (max-width: $grid-sm)
+				min-height 0
+
+	&-feature
+		&:hover
+			background-color alpha($black, .06)
+			box-shadow none
+			transform translateY(0)
+
+		.card__content
+			padding 40px 20px
+			height auto
+			border-top 1px solid alpha($black, .1)
+			border-radius 10px
+			text-align center
+			font-size 1.6rem
+
+	&-article
+		.card__content
+			border-top 1px solid alpha($black, .1)
+			border-radius 10px
+
+	&-popular
+		.card__photo
+			position relative
+			display block
+			overflow hidden
+			padding-top 100%
+			border-top-left-radius 10px
+			border-top-right-radius 10px
+
+			&:after
+				position absolute
+				top 0
+				right 0
+				bottom 0
+				left 0
+				z-index 1
+				background-color alpha($primary, .8)
+				content ''
+				opacity 0
+				transition .5s opacity ease
+
+		.card__content
+			padding 15px 20px
+			height auto
+			background-color alpha($primary, .9)
+			color $white
+			font-size 1.3rem
+			transition .5s background-color ease
+
+		.card__title
+			margin-bottom 10px
+			font-size 1.8rem
+
+		&:hover
+			.card__photo:after
+				opacity 1
+
+
+	&__photo
+		position relative
+		padding-top (150 / 245 * 100)%
+		border-top-left-radius 10px
+		border-top-right-radius 10px
+		background-position center
+		background-size cover
+		background-repeat no-repeat
+
+		&:after
+			position absolute
+			top 0
+			right 0
+			bottom 0
+			left 0
+			border-top-left-radius 10px
+			border-top-right-radius 10px
+			background-color alpha($black, .1)
+			content ''
+
+	&__content
+		display flex
+		flex-direction column
+		justify-content space-between
+		padding 30px 20px
+		height 200px
+		border 1px solid alpha($black, .1)
+		border-top none
+		border-bottom-right-radius 10px
+		border-bottom-left-radius 10px
+
+		@media (max-width: $grid-xs)
+			height auto
+
+		@media (max-width: $grid-sm)
+			padding 15px 10px
+
+	&__title
+		overflow hidden
+		font-weight 400
+		font-size 1.6rem
+
+		@media (max-width: $grid-sm)
+			margin-bottom 10px
+			font-size 1.4rem
+
+	&__benefit
+		color alpha($black, .3)
+		font-size 2.4rem
+		line-height 1
+
+		@media (max-width: $grid-sm)
+			font-size 1.8rem
+
+	&__date
+		color alpha($black, .3)
+		font-size 1.2rem
+
+		@media (max-width: $grid-sm)
+			font-size 1rem
+
+	&__position
+		color #777777
+		font-size 1.3rem

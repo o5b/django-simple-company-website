@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Наши цены{% endblock title %}
+
+
+{% block content %}
+	<section class="padding-top-60 padding-bottom-30">
+		<div class="container">
+			<div class="row margin-bottom-20">
+				<div class="col-md-5 offset-md-3">
+					<h1 class="title__h1">
+						Наши цены
+					</h1>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col offset-md-3">
+					<ul class="breadcrumb">
+						<li>
+							<a href="/">Главная</a>
+						</li>
+
+						<li>
+							Наши цены
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="padding-top-40">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<ul class="subnav js-subnav-fixed">
+						{% for service in object_list %}
+							<li class="subnav__item">
+								<a class="subnav__a js-subnav-link" href="#{{ service.slug }}">{{ service.title }}</a>
+							</li>
+						{% endfor %}
+					</ul>
+				</div>
+
+				<div class="col-md-9 js-subnav-anchor">
+					{% for service in object_list %}
+						<div class="{% if not forloop.last %}padding-bottom-50{% endif %}" id="{{ service.slug }}">
+							<h2 class="title title-h3 margin-bottom-30">
+								<a class="link-black" href="{{ service.get_absolute_url }}">{{ service.title }}</a>
+							</h2>
+
+							<div class="margin-bottom-40">
+								{% if service.prices.count %}
+									<div class="pricelist margin-bottom-10">
+										{% for price in service.prices.all %}
+											<a class="pricelist__row pricelist__row-link" href="{{ price.service.get_absolute_url }}">
+												<div class="pricelist__title">
+													{{ price.title }}
+												</div>
+
+												<div class="pricelist__price">
+													{{ price.price }}
+												</div>
+											</a>
+										{% endfor %}
+									</div>
+								{% endif %}
+
+								<div class="content content-comment">
+									{{ service.conclusion|safe }}
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

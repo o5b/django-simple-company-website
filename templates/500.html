@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}500 ошибка — Ошибка на сервере{% endblock title %}
+
+
+{% block content %}
+	<section class="padding-top-60 padding-bottom-30">
+		<div class="container">
+			<div class="row justify-content-center margin-bottom-20">
+				<div class="col-md-8">
+					<h1 class="title__h1">
+						Ошибка на сервере
+					</h1>
+				</div>
+			</div>
+
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<ul class="breadcrumb">
+						<li>
+							<a href="/">Главная</a>
+						</li>
+
+						<li>
+							Ошибка на сервере
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="padding-top-40 padding-bottom-30">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-8">
+					<div class="content">
+						<p>
+							К сожалению, что-то пошло не так.<br>
+							Мы уже работаем над решением проблемы.
+						</p>
+
+						<p>
+							Повторите Ваш запрос спустя некоторое время. На восстановление работоспособности сайта нам нужно ещё несколько минут.
+						</p>
+
+						<p>
+							Спасибо за понимание!
+						</p>
+
+						<p>
+							<a class="btn" href="{% url 'main:index' %}">Перейти на главную страницу</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}

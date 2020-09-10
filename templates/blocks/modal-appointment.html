@@ -1,0 +1,69 @@
+<div class="modal js-modal" data-modal="appointment">
+	<div class="modal__overlay js-modal-close"></div>
+
+	<div class="modal__block">
+		<form class="js-form" action="{% url 'capture:appointment_create' %}" method="post" data-goal="appointment">
+			{% csrf_token %}
+
+			<div class="js-form-success-hide">
+				<div class="row margin-bottom-20">
+					<div class="col-sm-3">
+						<label class="form__label" for="id_name">Имя, фамилия</label>
+					</div>
+
+					<div class="col-sm-9">
+						<input class="form__input" id="id_name" type="text" name="name" placeholder="Как к Вам обращаться?" required>
+					</div>
+				</div>
+
+				<div class="row margin-bottom-20">
+					<div class="col-sm-3">
+						<label class="form__label" for="id_phone">Телефон</label>
+					</div>
+
+					<div class="col-sm-9">
+						<input class="form__input" id="id_phone" type="tel" name="phone" data-mask="+00 (000) 000-00-00" placeholder="+38 (999) 999-99-99" required>
+					</div>
+				</div>
+
+				<div class="row margin-bottom-20">
+					<div class="col-sm-3">
+						<label class="form__label" for="id_comment">Комментарий</label>
+					</div>
+
+					<div class="col-sm-9">
+						<input class="form__input" id="id_comment" type="text" name="comment" placeholder="Не обязательно...">
+					</div>
+				</div>
+
+				<div class="row margin-bottom-50">
+					<div class="col-sm-9 offset-sm-3">
+						<label for="id_policy">
+							<input class="form__policy" id="id_policy" type="checkbox" required> Ознакомлен и согласен с <a class="link" href="{% url 'services:page_detail' slug='policy' %}">политикой конфиденциальности</a>
+						</label>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-sm-9 offset-sm-3">
+						<button class="form__button" type="submit">Записаться</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="js-form-success-show" style="display:none;">
+				<div class="text-center">
+					<p class="h2">
+						Спасибо!
+					</p>
+
+					<p class="h3">
+						Наш администратор свяжется с Вами в ближайшее время.
+					</p>
+				</div>
+			</div>
+		</form>
+
+		<a class="modal__close js-modal-close" href="javascript:void(0);"></a>
+	</div>
+</div>

@@ -1,0 +1,3 @@
+{{ object.comment }}
+{{ object.content_1 }}
+{{ object.content_2 }}

@@ -1,0 +1,13 @@
+<a class="card card-popular" href="{{ popular.link }}">
+	<div class="card__photo" {% if popular.photo %}style="background-image: url('{{ popular.photo.url }}')"{% endif %}></div>
+
+	<div class="card__content">
+		<div class="card__title">
+			{{ popular.title }}
+		</div>
+
+		<div>
+			{{ popular.description|linebreaksbr }}
+		</div>
+	</div>
+</a>

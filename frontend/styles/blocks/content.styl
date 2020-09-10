@@ -1,0 +1,61 @@
+@import 'link'
+
+.content
+	line-height 2
+	font-size 1.6rem
+	--flow-space 1em
+
+	&-comment
+		line-height (23 / 13)
+		font-size 1.3rem
+		color alpha($black, .7)
+
+	& > * + *
+		margin-top 1em
+		margin-top var(--flow-space)  // vertical rhythm
+
+	a
+		line-height 1.4
+		@extend .link
+
+	ul
+		padding-left 40px
+		list-style none
+
+		@media (max-width $grid-sm)
+			padding-left 30px
+
+		li
+			position relative
+			margin-bottom 10px
+
+			&:before
+				content ''
+				display block
+				position absolute
+				top 14px
+				left -30px
+				width 6px
+				height 6px
+				border-radius 3px
+				background-color alpha($black, .3)
+
+				@media (max-width $grid-sm)
+					left -20px
+
+	b,
+	strong
+		font-weight 400
+
+	blockquote
+		padding-left 2rem
+		border-left 2px solid alpha($black, .1)
+		color alpha($black, .7)
+
+	img
+		max-width 100%
+		height auto !important
+
+	.btn-primary,
+	.btn-primary:hover
+		color $white

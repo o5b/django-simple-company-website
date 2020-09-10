@@ -1,0 +1,5 @@
+{{ object.title }}
+{{ object.content }}
+{% for price in object.prices.all %}
+	{{ price.title }}
+{% endfor %}

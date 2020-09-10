@@ -1,0 +1,89 @@
+.footer
+	padding 40px 0
+	background-color $footerBackground
+	font-size 1.3rem
+	color $white
+
+
+	&__search
+		margin-right 50px
+
+		@media (max-width $grid-md)
+			margin-right 0
+			margin-bottom 60px
+
+
+	&__address
+
+		a
+			line-height 18px
+			color $footerLink
+
+		@media (max-width $grid-md)
+			margin-right -15px
+			margin-bottom 50px
+
+
+	&__social
+		text-align right
+
+		@media (max-width $grid-md)
+
+			.social
+				display block
+				margin-left 10px
+				margin-bottom 20px
+
+
+	&__line
+		margin 40px 0
+		width 100%
+		height 1px
+		border 0
+		background-color alpha($white, .2)
+
+		@media (max-width $grid-md)
+			display none
+
+
+	&__copyright
+		position relative
+		padding-left 15px
+
+		&:before
+			content '©'
+			top 2px
+			left 0
+			position absolute
+			color $footerLink
+
+		span
+			color $footerLink
+
+		@media (max-width $grid-md)
+			padding 0
+			margin-top -50px
+			line-height 30px
+
+			&:before
+				position relative
+
+
+	&__politics
+
+		a
+			color $footerLink
+
+		@media (max-width  $grid-md)
+			margin-bottom 50px
+
+
+	&__develop
+		text-align right
+		color $footerLink
+
+		a
+			color $white
+
+		@media (max-width $grid-md)
+			text-align left

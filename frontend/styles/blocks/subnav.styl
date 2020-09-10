@@ -1,0 +1,82 @@
+.subnav
+	display none
+	position absolute
+	margin 0
+	margin-right 60px
+	padding 0
+	list-style none
+	font-weight 400
+	border-radius 5px
+	transition .3s box-shadow ease
+
+	@media (max-width $grid-sm)
+		display flex
+		flex-direction row
+		flex-wrap nowrap
+		align-items flex-end
+		position static
+		margin-left -20px
+		margin-right -20px
+		margin-bottom 40px
+		padding-left 5px
+		padding-right 5px
+		border-radius 0
+		border-bottom 1px solid alpha($black, .15)
+		overflow-x auto
+		overflow-y hidden
+		transition .3s all ease
+
+	&-fixed
+		position fixed
+		box-shadow 0 0 20px alpha($black, .1)
+
+		@media (max-width $grid-sm)
+			top 66px
+			right 0
+			left 0
+			z-index 100
+			margin-left 0
+			margin-right 0
+			padding-top 15px
+			background-color $white
+
+
+	&__item
+		width 180px
+		border 1px solid alpha($black, .1)
+		border-bottom-color transparent
+		box-sizing border-box
+
+		@media (max-width $grid-sm)
+			width auto
+			padding-left 15px
+			padding-right 15px
+			border 0
+			white-space nowrap
+
+		&:first-child
+			border-top-left-radius 5px
+			border-top-right-radius 5px
+
+		&:last-child
+			border-bottom-left-radius 5px
+			border-bottom-right-radius 5px
+			border-bottom-color alpha($black, .1)
+
+
+	&__a
+		display inline-block
+		padding 16px
+		color $black
+
+		@media (max-width $grid-sm)
+			border-bottom 1px solid transparent
+			padding 0 0 15px 0
+
+		&-active,
+		&:focus,
+		&:active
+			color alpha($black, .5)
+
+			@media (max-width $grid-sm)
+				border-bottom 1px solid $black

@@ -1,0 +1,41 @@
+.link
+	color $primary
+	border-bottom 1px solid alpha($primary, .3)
+
+	&:hover
+		color $primary
+		border-color alpha($primary, 1)
+		text-decoration none //
+
+	&-black
+		color $black
+		border-color alpha($black, .3)
+
+		&:hover
+			color $black
+			border-color alpha($black, 1)
+
+	&-white
+		color $white
+		border-color alpha($white, .3)
+
+		&:hover
+			color $white
+			border-color alpha($white, 1)
+
+	&-gray
+		color $gray
+		border-color alpha($gray, .3)
+
+		&:hover
+			color $gray
+			border-color alpha($gray, 1)
+
+	&-nowrap
+		white-space nowrap
+
+	&-opacity
+		opacity .8
+
+		&:hover
+			opacity 1

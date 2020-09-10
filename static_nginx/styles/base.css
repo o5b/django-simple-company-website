@@ -1,0 +1,14 @@
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility !important;
+}
+html {
+  font-size: 10px;
+}
+a,
+button {
+  transition: 0.3s all ease;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJsb2Nrcy9fY29tbW9uLnN0eWwiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7O0VBRUMsbUNBQXVCO0VBQ3ZCLDZDQUFlOztBQUdoQjtFQUNDLGVBQVU7O0FBR1g7O0VBRUMseUJBQVciLCJmaWxlIjoiYmFzZS5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyJodG1sLFxuYm9keVxuXHQtd2Via2l0LWZvbnQtc21vb3RoaW5nIGFudGlhbGlhc2VkXG5cdHRleHQtcmVuZGVyaW5nIG9wdGltaXplTGVnaWJpbGl0eSAhaW1wb3J0YW50XG5cblxuaHRtbFxuXHRmb250LXNpemUgMTBweFxuXG5cbmEsXG5idXR0b25cblx0dHJhbnNpdGlvbiAuM3MgYWxsIGVhc2VcbiJdfQ== */

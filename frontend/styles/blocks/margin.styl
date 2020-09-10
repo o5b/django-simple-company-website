@@ -1,0 +1,12 @@
+for num in 10 20 30 40 50 60 70 80 90 100 110 120 130 140 150
+	.margin-top-{num}
+		margin-top num px
+
+		@media (max-width $grid-sm)
+			margin-top (num / 2) px
+
+	.margin-bottom-{num}
+		margin-bottom num px
+
+		@media (max-width $grid-sm)
+			margin-bottom (num / 2) px

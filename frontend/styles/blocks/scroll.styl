@@ -1,0 +1,210 @@
+.scroll
+	position fixed
+	top 0
+	right 0
+	left 0
+	z-index 150
+	visibility hidden
+	opacity 0
+	transition visibility 0s linear .3s, opacity .3s, transform .3s
+	transform translateY(-68px)
+
+	&-fixed
+		visibility visible
+		opacity 1
+		transition visibility 0s linear 0s, opacity .3s, transform .3s
+		transform translateY(0)
+
+	&__container
+		padding-right 0
+		padding-left 0
+		max-width 1180px
+		background-color $primary
+		box-shadow 0 1px 0 0 rgba(0, 0, 0, .12)
+
+		@media (max-width: $grid-sm)
+			padding-right 0
+			padding-left 0
+			width 100%
+
+	&__appointment
+		display block
+		padding 24px 0
+		background-color $primary
+		color $white
+		text-align center
+
+		@media (max-width: $grid-sm)
+			font-size 1.2rem
+
+			span
+				display none
+
+		&:hover
+			background-color lighten($primary, 10%)
+			color $white
+
+	&__content
+		display flex
+		align-items center
+		padding 0 40px
+		height 100%
+		background-color $primary
+		color $white
+
+		@media (max-width: $grid-sm)
+			justify-content space-between
+			padding 0 10px
+
+	&__phone
+		position relative
+		margin-right 20px
+		padding-left 50px
+		color $white
+
+		@media (max-width: $grid-md)
+			display none
+
+		&:before
+			position absolute
+			top 50%
+			left 0
+			width 40px
+			height 40px
+			border 1px solid alpha($white, .8)
+			border-radius 50%
+			background-image url('/static/images/header/header__phone-white.svg')
+			background-position center
+			background-repeat no-repeat
+			content ''
+			opacity .5
+			transition .2s all ease
+			transform translateY(-50%)
+
+		&:hover
+			color $white
+
+			&:before
+				border-color transparent
+				background-color alpha($white, .2)
+
+	&__address
+		margin-right 40px
+		color $gray
+
+		@media (max-width: $grid-md)
+			display none
+
+		a
+			border-bottom none
+			color $black
+			white-space nowrap
+
+		&-mobile
+			position relative
+			display none
+			width 40px
+			height 40px
+			border 1px solid alpha($black, .25)
+			border-radius 50%
+
+			&:after
+				position absolute
+				top 50%
+				left 50%
+				width 40px
+				height 40px
+				filter invert(1)
+				background-image url('/static/images/header/header__phone-white.svg')
+				background-position center
+				background-repeat no-repeat
+				content ''
+				opacity .25
+				transform translate(-50%, -50%)
+
+			@media (max-width: $grid-md)
+				display inline-block
+
+	&__search
+		max-width 250px
+		width 100%
+
+		@media (max-width: $grid-md)
+			display none
+
+		&-mobile
+			position relative
+			display none
+			width 40px
+			height 40px
+			border 1px solid alpha($black, .25)
+			border-radius 50%
+
+			&:after
+				position absolute
+				top 50%
+				left 50%
+				width 40px
+				height 40px
+				filter invert(1)
+				background-image url('/static/images/menu/menu__search.svg')
+				background-position center
+				background-repeat no-repeat
+				content ''
+				opacity .5
+				transform translate(-50%, -50%)
+
+			&:hover
+				border-color alpha($black, .3)
+
+				&:after
+					opacity .3
+
+			@media (max-width: $grid-md)
+				display inline-block
+
+	&__menu
+		display block
+		padding 24px 0
+		padding-right 20px
+		background-color $primary
+		color $white
+		text-align center
+
+		@media (max-width: $grid-sm)
+			padding 0
+			height 100%
+			font-size 0
+
+		&:hover
+			background-color lighten($primary, 10%)
+			color $white
+
+		&:after
+			position absolute
+			top 50%
+			left 50%
+			width 40px
+			height 40px
+			background-image url('/static/images/scroll/scroll__menu.svg')
+			background-position center
+			background-size 30px 7px
+			background-repeat no-repeat
+			content ''
+			transform translate(40%, -52%)
+
+			@media (max-width: $grid-sm)
+				transform translate(-50%, -50%)
+
+	.header__day
+		margin-left auto
+		opacity .5
+
+		@media (max-width: $grid-md)
+			margin-left 0
+
+	.header__night
+		margin-left auto
+
+		@media (max-width: $grid-md)
+			margin-left 0

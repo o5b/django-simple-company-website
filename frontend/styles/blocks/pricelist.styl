@@ -1,0 +1,66 @@
+.pricelist
+	font-size 1.6rem
+
+	&__row
+		display flex
+		align-items flex-start
+		justify-content space-between
+		position relative
+		margin-bottom 15px
+
+		&:last-child
+			margin-bottom 0
+
+		&:before
+			content ''
+			display block
+			position absolute
+			right 0
+			top 20px
+			left 0
+			border-bottom 1px solid alpha($black, .15)
+			z-index 0
+
+		&-link
+			color $black
+
+			&:hover,
+			&:focus
+				color $primary
+
+				&:before
+					border-bottom-color alpha($primary, .35)
+
+	&__title,
+	&__price
+		display inline-block
+		position relative
+		font-size 16px
+		line-height 28px
+		background-color #fff
+
+
+	&__title
+		padding-right 10px
+		max-width 75%
+
+
+	&__code
+		margin-top -.5rem
+		font-size 60%
+		color alpha($black, .5)
+
+
+	&__price
+		padding-left 10px
+		text-align right
+		white-space nowrap
+
+		b
+			margin-right 3px
+			font-weight 350
+			color $primary
+
+		s
+			font-size 1.3rem
+			color #a3a3a3

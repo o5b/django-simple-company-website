@@ -1,0 +1,260 @@
+.header
+	position relative
+	z-index 100
+	padding 60px 0
+	height 160px
+
+	@media (max-width: $grid-sm)
+		padding 30px 0
+		height 120px
+
+	&-black
+		height 145px
+
+		.container
+			padding-bottom 40px
+			border-bottom 1px solid alpha($black, .2)
+
+		.header__logo
+			background-image url('/static/images/header/header__logo-blue.svg')
+
+			@media (max-width: $grid-sm)
+				width 41px
+				height 41px
+				background-position left top
+				background-size auto 41px
+
+		.header__appointment
+			&:hover
+				border-color alpha($black, .2)
+				color $black
+
+		.header__menu
+			color $black
+
+		.header__day,
+		.header__night,
+		.header__phone
+			color $black
+
+			&:hover
+				color alpha($black, .5)
+
+			&:before
+				filter invert(1)
+				opacity .2
+
+	&__logo
+		display inline-block
+		width 144px
+		height 40px
+		background-image url('/static/images/header/header__logo-white.svg')
+		background-position center
+		background-repeat no-repeat
+
+		@media (max-width: $grid-sm)
+			width 41px
+			height 41px
+			background-image url('/static/images/header/header__logo-mobile.svg')
+
+	&__row
+		@media (max-width: $grid-sm)
+			flex-wrap nowrap
+			justify-content space-between
+			align-items center
+
+			& > div
+				flex-basis 0
+				padding-right 5px
+				padding-left 5px
+				max-width 100%
+				width auto
+
+			& > div:first-child
+				margin-right auto
+
+		@media (max-width: $grid-xs)
+			& > div
+				padding-right 2px
+				padding-left 2px
+
+	&__appointment
+		display inline-block
+		padding 10px 20px
+		border 1px solid $secondary
+		border-radius 25px
+		background-color $secondary
+		color $white
+		transition all .3s ease
+
+		@media (max-width: $grid-md)
+			padding 10px 15px
+
+			span
+				display none
+
+		&:hover
+			border-color alpha($white, 0)
+			background-color alpha($white, .2)
+			color $white
+			text-decoration none
+
+	&__day,
+	&__night
+		position relative
+		margin-right 5px
+		margin-left 5px
+		padding-left 50px
+		color $white
+		line-height 40px
+
+		@media (max-width: $grid-md)
+			margin-right 2px
+			margin-left 2px
+			padding-left 40px
+			font-size 0
+
+		&:before
+			position absolute
+			top 50%
+			left 0
+			display block
+			width 40px
+			height 40px
+			border 1px solid $white
+			border-radius 50%
+			background-position center
+			background-size 40px
+			background-repeat no-repeat
+			content ''
+			transition all .3s ease
+			transform translateY(-50%)
+
+		&:hover
+			color $white
+
+			&:before
+				border-color transparent
+				background-color alpha($white, .2)
+
+	&__day
+		&:before
+			background-image url('/static/images/header/header__moon-white.svg')
+			background-size 90%
+
+	&__night
+		&:before
+			background-image url('/static/images/header/header__sun-white.svg')
+			background-size 70%
+
+	&__phone
+		position relative
+		margin-right 5px
+		margin-left 5px
+		padding-left 50px
+		color $white
+
+		@media (max-width: $grid-md)
+			margin-right 2px
+			margin-left 2px
+			padding-left 40px
+			font-size 0
+
+		&:before
+			position absolute
+			top 50%
+			left 0
+			display block
+			width 40px
+			height 40px
+			border 1px solid $white
+			border-radius 50%
+			background-image url('/static/images/header/header__phone-white.svg')
+			background-position center
+			background-size 16px
+			background-repeat no-repeat
+			content ''
+			transition all .3s ease
+			transform translateY(-50%)
+
+		&:hover
+			color $white
+
+			&:before
+				border-color transparent
+				background-color alpha($white, .2)
+
+	&__menuwrap
+		text-align right
+
+	&__menu
+		position relative
+		margin-left 5px
+		padding-left 50px
+		color $white
+		line-height 40px
+		transition all .4s ease
+
+		@media (max-width: $grid-sm)
+			margin-left 2px
+			font-size 0
+
+		&:hover
+			color $white
+
+			&:before
+				border-color transparent
+				background-color alpha($white, .2)
+
+		&:before
+			position absolute
+			top 50%
+			left 0
+			width 40px
+			height 40px
+			border 1px solid $secondary
+			border-radius 50%
+			background-color $secondary
+			background-image url('/static/images/header/header__menu-white.svg')
+			background-position center
+			background-repeat no-repeat
+			content ''
+			transition all .3s ease
+			transform translateY(-50%)
+
+	&__addresswrap
+		text-align right
+
+	&__address
+		position relative
+		padding-left 50px
+		color $white
+		line-height 40px
+		transition all .4s ease
+
+		@media (max-width: $grid-sm)
+			padding-left 40px
+			font-size 0
+
+		&:hover
+			color $white
+			text-decoration none
+
+			&:before
+				background-color alpha($white, .25)
+				opacity 1
+
+		&:before
+			position absolute
+			top 50%
+			left 0
+			width 40px
+			height 40px
+			border-radius 50%
+			background-color alpha($white, .1)
+			background-image url('/static/images/header/header__map-white.png')
+			background-position center
+			background-repeat no-repeat
+			content ''
+			transition all .4s ease
+			transform translateY(-50%)

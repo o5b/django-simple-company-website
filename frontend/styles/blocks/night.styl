@@ -1,0 +1,338 @@
+$night-bg-color = #05263f
+$text-color = #eefaff
+
+.night
+	background-color $night-bg-color
+	color $text-color
+
+	.header
+		&-black
+			.header__phone:before,
+			.header__menu:before,
+			.header__day:before,
+			.header__night:before
+				filter none
+
+			.header__phone:hover,
+			.header__menu:hover,
+			.header__day:hover,
+			.header__night:hover
+				color alpha($text-color, .8)
+
+			.header__appointment-blue
+				background-color lighten($night-bg-color, 15%)
+
+		&__logo
+			background-image url('/static/images/header/header__logo-white.svg')
+
+			@media (max-width: $grid-sm)
+				background-image url('/static/images/header/header__logo-mobile.svg')
+
+		&__appointment-blue
+			border 1px solid $text-color
+
+		&__phone,
+		&__menu,
+		&__day,
+		&__night
+			color $text-color
+
+			&:before
+				opacity .8
+
+		&-black
+			border-bottom 1px solid lighten($night-bg-color, 30%)
+
+	.menu
+		&__main
+			background-color lighten($night-bg-color, 15%)
+
+		&__name
+			filter invert(1)
+			color darken($text-color, 100)
+
+			&:before
+				opacity .8
+
+		&__contacts
+			background-color lighten($night-bg-color, 15%)
+
+		&__title
+			color darken($text-color, 15%)
+
+		&__search
+			& input
+				border-bottom 1px solid invert($text-color, 100%)
+				color invert($text-color, 100%)
+
+				&::placeholder
+					color invert($text-color, 100%)
+
+			& button
+				filter invert(1)
+
+		.social
+			&-face,
+			&-vk,
+			&-insta
+				filter invert(1)
+				opacity .8
+
+	.scroll
+		& a,
+		&__address
+			color $text-color
+
+			&-mobile
+				filter invert(1)
+
+				&:after
+					opacity .8
+
+		&__phone
+			filter invert(0)
+
+		&__appointment,
+		&__menu
+			background-color lighten($night-bg-color, 15%)
+
+			&:hover
+				background-color lighten($night-bg-color, 30%)
+
+		&__content
+			background-color lighten($night-bg-color, 25%)
+
+		&__search
+			& input
+				color $text-color
+
+				&::placeholder
+					color alpha($text-color, .5)
+
+			& button
+				filter invert(1)
+
+			&-mobile
+				filter invert(1)
+
+				&:after
+					opacity .8
+
+	.subnav
+		background-color lighten($night-bg-color, 10%)
+
+		&__item
+			border-color darken($text-color, 30%)
+			border-bottom-color transparent
+
+			&:last-child
+				border-bottom-color darken($text-color, 30%)
+
+		&__a-active
+			color darken($text-color, 20%)
+
+	.slider
+		&__border
+			background-color $night-bg-color
+
+		&__border-left
+			&:after
+				border-color transparent transparent transparent $night-bg-color
+
+		&__border-right
+			&:before
+				border-color transparent transparent $night-bg-color transparent
+
+	.card
+		background-color lighten($night-bg-color, 10%)
+
+		&__date,
+		&__position,
+		&__benefit
+			color darken($text-color, 20%)
+
+		&-popular
+			.card__photo:after
+				background-color $night-bg-color
+
+			.card__content
+				background-color lighten($night-bg-color, 5%)
+				color darken($text-color, 20%)
+
+			&:hover
+				.card__photo:after
+					background-color alpha($night-bg-color, .8)
+
+				.card__content
+					background-color transparent
+
+	.text-muted
+		color $text-color !important
+
+	.service
+		&__title
+			color $text-color
+
+	.link
+		&-gray
+			color darken($text-color, 20%)
+
+	.cta
+		border-color darken($text-color, 20%)
+		background-color lighten($night-bg-color, 10%)
+
+	.review
+		&__cta,
+		&__card
+			border 1px solid darken($text-color, 20%)
+			background-color lighten($night-bg-color, 10%)
+			color $text-color
+
+	.arrow
+		&-left,
+		&-right,
+		&__points
+			filter invert(1)
+
+	.pricelist
+		&__title,
+		&__price
+			background-color $night-bg-color
+
+		&__code
+			color $text-color
+
+		&__price > b
+			color lighten($primary, 60%)
+
+		&__row-link
+			&:before
+				border-bottom 1px solid lighten($night-bg-color, 20%)
+
+	.footer
+		background-color lighten($night-bg-color, 5%)
+
+		&__search input
+			border-bottom 1px solid darken($text-color, 20%)
+			background-color lighten($night-bg-color, 15%)
+
+			&::placeholder
+				color darken($text-color, 10%)
+
+		.social
+			&-face,
+			&-vk,
+			&-insta
+				opacity .8
+
+	.modal__block
+		background-color $night-bg-color
+
+		.btn-block
+			border 1px solid $text-color
+			background-color lighten($night-bg-color, 10%)
+			color $text-color
+
+		.form
+			&__label
+				color $text-color
+
+			&__input,
+			&__textarea
+				background-color lighten($night-bg-color, 20%)
+				color $text-color
+
+				&::placeholder
+					color darken($text-color, 10%)
+
+				&:focus
+					background-color lighten($night-bg-color, 35%)
+					color $text-color
+
+			&__select
+				background-color lighten($night-bg-color, 20%)
+				color $text-color
+
+				option
+					color darken($text-color, 10%)
+
+	.title
+		&__sale
+			color lighten($primary, 60%)
+
+		&-h5
+			color darken($text-color, 10%)
+
+	.content-comment
+		color $text-color
+
+		a
+			color lighten($primary, 60%)
+
+	.content-comment strong
+		color $text-color
+
+	.tippy-arrow
+		border-bottom-color $night-bg-color !important
+
+	.tippy-content
+		background-color $night-bg-color
+		color $text-color
+
+	.faq
+		&__block
+			&:nth-child(odd)
+				background-color lighten($night-bg-color, 10%)
+
+		&__block
+			&:nth-child(even)
+				background-color lighten($night-bg-color, 20%)
+
+		&__category
+			&:before
+				filter invert(1)
+
+	#id_q
+		border-bottom 1px solid darken($text-color, 50%)
+		background-color $night-bg-color
+		color $text-color
+
+		&::placeholder
+			color darken($text-color, 20%)
+
+	blockquote
+		color darken($text-color, 10%)
+
+	a.btn
+		border 1px solid $text-color
+		background-color lighten($night-bg-color, 10%)
+
+	ul.breadcrumb > li
+		&:before
+			filter invert(1)
+
+	ul > li
+		&:before
+			filter invert(1)
+
+	a
+		color $text-color
+
+	.tippy-tooltip.light-theme
+		background-color $night-bg-color
+
+	.slider__slide
+		&:after
+			position absolute
+			top 0
+			right 0
+			bottom 0
+			left 0
+			z-index 1
+			display block
+			background-color alpha($night-bg-color, .5)
+			content ''
+
+	.slider__content
+		position relative
+		z-index 2

@@ -1,0 +1,350 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="imagetoolbar" content="no">
+	<meta name="msthemecompatible" content="no">
+	<meta name="cleartype" content="on">
+	<meta name="HandheldFriendly" content="True">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+	{% comment %}
+	<link sizes="152x152" href="{% static 'images/apple-touch-icon-152x152.png' %}" rel="apple-touch-icon">
+	<link sizes="144x144" href="{% static 'images/apple-touch-icon-144x144.png' %}" rel="apple-touch-icon">
+	<link sizes="120x120" href="{% static 'images/apple-touch-icon-120x120.png' %}" rel="apple-touch-icon">
+	<link sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.png' %}" rel="apple-touch-icon">
+	<link sizes="76x76" href="{% static 'images/apple-touch-icon-76x76.png' %}" rel="apple-touch-icon">
+	<link sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.png' %}" rel="apple-touch-icon">
+	<link sizes="60x60" href="{% static 'images/apple-touch-icon-60x60.png' %}" rel="apple-touch-icon">
+	<link sizes="57x57" href="{% static 'images/apple-touch-icon-57x57.png' %}" rel="apple-touch-icon">
+	<link sizes="196x196" href="{% static 'images/favicon-196x196.png' %}" rel="icon" type="image/png">
+	<link sizes="128x128" href="{% static 'images/favicon-128.png' %}" rel="icon" type="image/png">
+	<link sizes="96x96" href="{% static 'images/favicon-96x96.png' %}" rel="icon" type="image/png">
+	<link sizes="32x32" href="{% static 'images/favicon-32x32.png' %}" rel="icon" type="image/png">
+	<link sizes="16x16" href="{% static 'images/favicon-16x16.png' %}" rel="icon" type="image/png">
+	<meta name="application-name" content="Example">
+	<meta name="msapplication-tooltip" content="Example">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-starturl" content="http://example.ru">
+	<meta name="msapplication-tap-highlight" content="no">
+	<meta name="msapplication-square310x310logo" content="{% static 'images/mstile-310x310.png' %}">
+	<meta name="msapplication-wide310x150logo" content="{% static 'images/mstile-310x150.png' %}">
+	<meta name="msapplication-square150x150logo" content="{% static 'images/mstile-150x150.png' %}">
+	<meta name="msapplication-TileImage" content="{% static 'images/mstile-144x144.png' %}">
+	<meta name="msapplication-square70x70logo" content="{% static 'images/mstile-70x70.png' %}">
+	{% endcomment %}
+
+	<title>{% block full_title %}{% block title %}{% endblock %} — Умный дом{% endblock full_title %}</title>
+
+	<link rel="canonical" href="{{ request.path }}">
+	<link rel="preload" href="{% static 'styles/base.css' %}" as="style">
+	<link rel="stylesheet" href="{% static 'styles/bootstrap4/base.css' %}">
+	<link rel="stylesheet" href="{% static 'styles/base.css' %}">
+
+	{% block head %}{% endblock head %}
+
+</head>
+<body>
+	<script>
+		if (localStorage.getItem('night') === 'true') {
+			document.body.classList.add('night');
+		};
+	</script>
+
+	<header class="header {% block header_class %}header-black{% endblock header_class %}">
+		<div class="container">
+			<div class="row header__row">
+				<div class="col-3 col-sm-4 col-md-3">
+					<a class="header__logo" href="/"></a>
+				</div>
+
+				<div class="col-3 col-sm-3 col-md-3">
+					<a class="header__appointment js-modal-btn" data-target="appointment" href="javascript:void(0);">Договориться <span> о встрече</span></a>
+				</div>
+
+				<div class="col-6">
+					<div class="d-flex justify-content-between">
+						<a class="header__day js-night-btn" href="javascript:void(0);">Ночь</a>
+
+						<a class="header__phone js-tippy" data-html=".js-tippy-html-want-phone" href="javascript:void(0);">
+							{{ preference.phone }}<br>
+							{{ preference.address }}
+						</a>
+
+						<div class="header__menuwrap">
+							<a class="header__menu js-menu-btn" href="javascript:void(0);"><span>Меню</span></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	{% block content %}{% endblock content %}
+
+	<div class="scroll js-menu-scroll">
+		<div class="container scroll__container">
+			<div class="row no-gutters">
+				<div class="col-4 col-md-3">
+					<a class="scroll__appointment js-modal-btn" data-target="appointment" href="javascript:void(0);">
+						Договориться <span> о встрече</span>
+					</a>
+				</div>
+
+				<div class="col-6 col-md-7">
+					<div class="scroll__content">
+						<a class="scroll__phone js-tippy" data-html=".js-tippy-html-want-phone" href="javascript:void(0);">
+							{{ preference.phone }}<br>
+							{{ preference.address }}
+						</a>
+
+						<form class="search scroll__search" action="/search/" method="get">
+							<input type="search" name="q" placeholder="Поиск по сайту">
+							<button type="submit"></button>
+						</form>
+
+						<a class="scroll__address-mobile js-tippy" data-html=".js-tippy-html-want-phone" href="javascript:void(0);"></a>
+						<a class="scroll__search-mobile" href="/search/"></a>
+						<a class="header__day js-night-btn" href="javascript:void(0);">Ночь</a>
+					</div>
+				</div>
+
+				<div class="col-2 col-md-2">
+					<a class="scroll__menu js-menu-btn" href="javascript:void(0);">
+						Меню
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="menu js-menu">
+		<div class="container menu__container">
+			<div class="row no-gutters menu__row">
+				<div class="col-md-3">
+					<div class="menu__contacts">
+						<div class="menu__title">
+							Умный дом
+						</div>
+
+						<div class="menu__address">
+							<div>
+								<a class="link link-black" href="tel:{{ preference.phone }}">{{ preference.phone }}</a>
+							</div>
+
+							{% if preference.phone_mobile %}
+								<div>
+									<a class="link link-black" href="tel:{{ preference.phone_mobile }}">{{ preference.phone_mobile }}</a>
+								</div>
+							{% endif %}
+
+							{% if preference.phone_whatsapp %}
+								<div>
+									<a class="link link-black" href="https://wa.me/{{ preference.phone_whatsapp }}">Написать в WhatsApp</a>
+								</div>
+							{% endif %}
+
+							<div>
+								{{ preference.address }}
+							</div>
+
+							<div>
+								<a class="link link-black" href="{{ preference.map_link }}">Как проехать</a>
+							</div>
+						</div>
+
+						<div class="menu__social">
+							{% if preference.social_facebook %}
+								<a class="social social-face" href="{{ preference.social_facebook }}"></a>
+							{% endif %}
+
+							{% if preference.social_vkontakte %}
+								<a class="social social-vk" href="{{ preference.social_vkontakte }}"></a>
+							{% endif %}
+
+							{% if preference.social_instagram %}
+								<a class="social social-insta" href="{{ preference.social_instagram }}"></a>
+							{% endif %}
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-9">
+					<div class="menu__main">
+						<div class="row menu__row">
+							<div class="col-12 col-md-9">
+								<form class="search menu__search" action="/search/" method="get">
+									<input type="search" name="q" placeholder="Поиск по сайту">
+									<button type="submit">
+								</form>
+							</div>
+
+							<div class="col-12 col-md-3">
+								<div class="menu__namewrap">
+									<a href="javascript:void(0);" class="menu__name js-menu-close">Меню</a>
+								</div>
+
+								<div class="menu__namewrap menu__namewrap-mobile">
+									<a href="javascript:void(0);" class="menu__name js-menu-close"></a>
+								</div>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-6">
+								<div class="menu__title">
+									Наши услуги
+								</div>
+
+								<ul class="menu__nav">
+									{% for service in service_list %}
+										<li>
+											<a href="{{ service.get_absolute_url }}">{{ service.title }}</a>
+										</li>
+									{% endfor %}
+								</ul>
+							</div>
+
+							<div class="col-md-6">
+								<div class="menu__title">
+									<a href="{% url "main:index" %}">
+									{{ request.get_host }}</a>
+								</div>
+
+								<ul class="menu__nav">
+									<li>
+										<a href="{% url 'main:about' %}">О компании</a>
+									</li>
+
+									<li>
+										<a href="{% url 'services:price_list' %}">Цены</a>
+									</li>
+
+									<li>
+										<a href="{% url 'services:page_detail' slug='licenses' %}">Лицензия</a>
+									</li>
+
+									<li>
+										<a href="{% url 'services:page_detail' slug='contacts' %}">Контакты</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	{% include "blocks/modal-appointment-full.html" %}
+	{% include "blocks/modal-night.html" %}
+
+	<div class="js-tippy-html-want-phone" style="display:none;">
+		<div class="tippy__phone">
+			<a class="tippy__button" href="tel:{{ preference.phone }}">{{ preference.phone }}</a>
+
+			{% if preference.phone_mobile %}
+				<a class="tippy__button" href="tel:{{ preference.phone_mobile }}">{{ preference.phone_mobile }}</a>
+			{% endif %}
+
+			{% if preference.phone_whatsapp %}
+				<a class="tippy__button tippy__button-whatsapp" href="https://wa.me/{{ preference.phone_whatsapp }}">Написать в WhatsApp</a>
+			{% endif %}
+		</div>
+	</div>
+
+	<footer class="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 col-sm-12">
+					<div>
+						<form class="search footer__search" action="/search/" method="get">
+							<input type="search" name="q" placeholder="Поиск по сайту">
+							<button type="submit">
+						</form>
+					</div>
+
+					<div class="margin-top-20 margin-bottom-20">
+						<a class="link link-white" href="{% url 'services:page_detail' slug='contacts' %}">Контакты</a>
+					</div>
+
+					<div class="margin-top-20 margin-bottom-20">
+						<a class="link link-white" href="{% url 'services:page_detail' slug='licenses' %}">Лицензия</a>
+					</div>
+				</div>
+
+				<div class="col-9 col-md-5">
+					<div class="footer__address">
+						<p>
+							<a class="link link-white" href="tel:{{ preference.phone }}">{{ preference.phone }}</a>
+						</p>
+
+						<p>
+							{{ preference.footer_address|linebreaksbr }}
+						</p>
+
+						<a class="link link-white" href="{{ preference.map_link }}">Показать на карте</a>
+					</div>
+				</div>
+
+				<div class="col-3 col-md-3">
+					<div class="footer__social">
+						{% if preference.social_facebook %}
+							<a class="social social-face" href="{{ preference.social_facebook }}"></a>
+						{% endif %}
+
+						{% if preference.social_vkontakte %}
+							<a class="social social-vk" href="{{ preference.social_vkontakte }}"></a>
+						{% endif %}
+
+						{% if preference.social_instagram %}
+							<a class="social social-insta" href="{{ preference.social_instagram }}"></a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+
+			<hr class="footer__line">
+
+			<div class="row">
+				<div class="col-md-3">
+					<div class="footer__copyright">
+						<span>2020</span> Компания Умный дом<br/>
+					</div>
+				</div>
+
+				<div class="col-md-3">
+					<div class="footer__politics">
+						Политика <a class="link link-white" href="{% url 'services:page_detail' slug='policy' %}">конфиденциальности</a>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="footer__develop">
+						Дизайн и разработка: <a class="link link-white" href="https://github.com/o5b/">o5b</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/combine/npm/jquery@3,npm/tippy.js@3,npm/swiper@4,npm/jquery-mask-plugin@1,npm/photoswipe@4,npm/photoswipe@4/dist/photoswipe-ui-default.min.js,npm/flatpickr@4,npm/flatpickr@4/dist/l10n/ru.min.js,npm/mark.js@8/dist/jquery.mark.min.js"></script>
+
+	<script src="{% static 'scripts/vendor/jqPhotoSwipe/jqPhotoSwipe.min.js' %}"></script>
+	<script src="{% static 'scripts/base.js' %}"></script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4/dist/photoswipe.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4/dist/default-skin/default-skin.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/combine/npm/tippy.js@3/dist/themes/light.min.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr@4/dist/flatpickr.min.css">
+
+	{% block footer_js %}{% endblock footer_js %}
+
+</body>
+</html>

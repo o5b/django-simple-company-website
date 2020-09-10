@@ -1,0 +1,25 @@
+.breadcrumb
+	margin 0
+	padding 0
+	list-style none
+
+	li
+		display inline-block
+
+	a
+		color alpha($black, .5)
+
+		&:hover
+			color alpha($black, .8)
+
+	& > li + li:before
+		content ''
+		display inline-block
+		width 4px
+		height 8px
+		padding 0 5px
+		background-image url('/static/images/arrows/arrow.svg')
+		background-size contain
+		background-position center
+		background-repeat no-repeat
+		opacity .4

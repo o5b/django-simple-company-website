@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block head %}
+	<meta name="keywords" content="поиск, найти, поиск на сайте, найти на сайте, компания умный дом">
+	<meta name="description" content="Поиск по технологиям, услугам, базе знаний, новостям и многом другом. Находите нужную информацию быстро и удобно.">
+{% endblock head %}
+
+
+{% block title %}Результаты запроса по: {{ request.GET.q }}{% endblock title %}
+
+
+{% block content %}
+	<section class="padding-top-40 padding-bottom-40">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col col-md-8">
+					<div class="content">
+						<div class="margin-bottom-50">
+							Результаты запроса по:
+
+							<form action="" method="get">
+								<input class="form__input" id="id_q" type="text" name="q" placeholder="Введите текст запроса" value="{{ request.GET.q }}">
+							</form>
+						</div>
+
+						{% if query %}
+							{% regroup page.object_list|dictsort:"content_type" by content_type as result_list %}
+
+							<div class="margin-bottom-50">
+								{% for content_type in result_list %}
+									<div class="margin-bottom-30">
+										<h3 class="margin-bottom-20">
+											{% if content_type.grouper == "main.page" %}
+												Страницы:
+											{% elif content_type.grouper == "main.about" %}
+												О компании:
+											{% elif content_type.grouper == "services.service" %}
+												Услуги:
+											{% endif %}
+										</h3>
+
+										<ul>
+											{% for r in content_type.list %}
+												<li>
+													<a href="{{ r.object.get_absolute_url }}?highlight={{ request.GET.q }}">
+														{{ r.object.title }}
+													</a>
+												</li>
+											{% endfor %}
+										</ul>
+									</div>
+								{% empty %}
+									<p class="text-muted">
+										По Вашему запросу информации на сайте не найдено.
+									</p>
+								{% endfor %}
+							</div>
+
+							<div>
+								<span>Страницы:&emsp;</span>
+								<span class="pagination">
+									{% for p in paginator.page_range %}
+										<a class="pagination__page {% if p == page.number %}pagination__page-active{% endif %}" href="/search/?q={{ request.GET.q }}&amp;page={{ p }}">{{ p }}</a>
+									{% endfor %}
+								</span>
+							</div>
+						{% else %}
+							<p class="text-center">
+								Воспользуйтесь панелью поиска
+							</p>
+						{% endif %}
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}
+
+
+{% block footer_js %}{% endblock footer_js %}

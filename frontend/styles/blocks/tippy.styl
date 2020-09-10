@@ -1,0 +1,63 @@
+.tippy
+	z-index 150
+	border-radius 15px
+	background-color $white
+	box-shadow 0 6px 20px 0 alpha($black, .1)
+
+	&-tooltip
+		padding 0 !important
+
+	&-content
+		overflow hidden !important
+		border-radius 4px !important
+
+	&-popper
+		pointer-events all
+
+	&__content
+		padding 40px
+		text-align left
+		font-size 1.3rem
+		line-height (23 / 13)
+
+		ul
+			margin 0
+			padding 0
+
+		li
+			margin-bottom 5px
+
+	&__phone
+		font-size 1.6rem
+
+	&__button
+		display block
+		padding 1rem 3rem
+		border-bottom 1px solid alpha($black, .1)
+		color $black
+
+		&:hover,
+		&:focus
+			background-color alpha($primary, .1)
+
+		&-whatsapp
+			display flex
+			align-items center
+			background-color #455a64
+			color $white
+			font-weight 700
+			font-size 1.4rem
+
+			&:before
+				display block
+				margin-right 1rem
+				width 25px
+				height 25px
+				background-image url('/static/images/modal/modal__whatsapp.svg')
+				background-repeat no-repeat
+				content ''
+
+			&:hover,
+			&:focus
+				background-color #075E54
+				color $white

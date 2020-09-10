@@ -1,0 +1,96 @@
+.form
+	&__card
+		margin 0 auto
+		padding 60px 30px 60px 40px
+		width 550px
+		border 1px solid $white
+		border-radius 10px
+		background-color $white
+
+	&__label
+		color alpha($black, .4)
+		line-height (38 / 13)
+
+	&__input,
+	&__textarea
+		display block
+		padding-bottom 10px
+		width 100%
+		outline none
+		border none
+		border-bottom 1px solid alpha($black, .12)
+		font-size 2rem
+
+		&::placeholder
+			color alpha($black, .4)
+
+	&__textarea
+		max-height 300px
+
+	&__select
+		display block
+		padding-bottom 10px
+		width 100%
+		outline none
+		border none
+		border-bottom 1px solid alpha($black, .12)
+		border-radius 0
+		background-color $white
+		font-size 2rem
+		-webkit-appearance none
+
+		&_wrap
+			position relative
+
+			&:after
+				position absolute
+				top 50%
+				right 20px
+				width 0
+				height 0
+				border-width 4px
+				border-style solid
+				border-color alpha($black, .3) transparent transparent
+				border-right 4px solid transparent
+				content ''
+				transform translateY(-50%)
+				pointer-events none
+
+		& > option[value='']
+			display none
+
+	&__button
+		position relative
+		padding 20px
+		outline none
+		border 1px solid $primary
+		border-radius 5px
+		background-color $primary
+		color $white
+		text-align left
+		font-size 1.6rem
+		cursor pointer
+
+		&:hover
+			background-color lighten($primary, 10%)
+
+			&:after
+				opacity 1
+
+		&:after
+			position absolute
+			top 50%
+			right 18px
+			width 10px
+			height 10px
+			background-image url('/static/images/slider/slider__arrow-btn.svg')
+			background-position center
+			background-repeat no-repeat
+			content ''
+			opacity .5
+			transition .3s all ease
+			transform translateY(-50%)
+
+	&__policy
+		margin-right 5px
+		vertical-align middle

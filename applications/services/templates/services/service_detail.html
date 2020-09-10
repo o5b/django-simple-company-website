@@ -1,0 +1,249 @@
+{% extends "base.html" %}
+{% load static %}
+{% load thumbnail %}
+
+
+{% block title %}{{ object.title }}{% endblock title %}
+
+
+{% block head %}
+	<meta name="description" content="{{ object.content|striptags|truncatewords:'20'|safe }}">
+
+	<style>
+		*,:after,:before {
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+	</style>
+{% endblock head %}
+
+
+{% block content %}
+	<section class="padding-top-60 padding-bottom-20">
+		<div class="container">
+			{% if object.photo %}
+				<div class="row margin-bottom-20">
+					<div class="col">
+						<ul class="breadcrumb">
+							<li>
+								<a href="/">Главная</a>
+							</li>
+
+							<li>
+								<a href="{{ object.category.get_absolute_url }}">{{ object.category.title }}</a>
+							</li>
+
+							<li>
+								{{ object.title }}
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col">
+						<div class="photo__item photo__item-alone" style="padding-top:50%;background-image:url('{{ object.photo.url }}');"></div>
+
+						<h1 class="title-h1">
+							{{ object.title }}
+						</h1>
+					</div>
+				</div>
+			{% else %}
+				<div class="row margin-bottom-20">
+					<div class="col-md-5 offset-md-3">
+						<h1 class="title-h1">
+							{{ object.title }}
+						</h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col offset-md-3">
+						<ul class="breadcrumb">
+							<li>
+								<a href="/">Главная</a>
+							</li>
+
+							<li>
+								{{ object.title }}
+							</li>
+						</ul>
+					</div>
+				</div>
+			{% endif %}
+		</div>
+	</section>
+
+	<section class="padding-top-20">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-3">
+					<ul class="subnav js-subnav-fixed">
+						<li class="subnav__item subnav__item-active">
+							<a class="subnav__a js-subnav-link" href="#about">Об услуге</a>
+						</li>
+
+						{% if object.media.count %}
+							<li class="subnav__item">
+								<a class="subnav__a js-subnav-link" href="#media">Фото и видео</a>
+							</li>
+						{% endif %}
+
+						{% if object.prices.count %}
+							<li class="subnav__item">
+								<a class="subnav__a js-subnav-link" href="#price">Цены на услугу</a>
+							</li>
+						{% endif %}
+
+						{% if service_list %}
+							<li class="subnav__item">
+								<a class="subnav__a js-subnav-link" href="#services">Другие услуги</a>
+							</li>
+						{% endif %}
+					</ul>
+				</div>
+
+				<div class="col-md-9 js-subnav-anchor">
+					<div class="padding-bottom-30" id="about">
+						<div class="row">
+							<div class="col-md-10">
+								<div class="content js-photo-content">
+									<meta property="og:title" content="{{ object.title }} — Умный дом, Ровно"/>
+									<meta property="og:description" content="{{ object.content|striptags|truncatewords:'20'|safe }}"/>
+									<meta property="og:type" content="article"/>
+									<meta property="og:url" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ request.path }}"/>
+									{% if object.get_photo %}
+										<meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ object.get_photo.url }}" />
+									{% endif %}
+
+									{{ object.content|safe }}
+								</div>
+							</div>
+						</div>
+					</div>
+
+					{% if object.media.count %}
+						<div class="padding-top-20 padding-bottom-30" id="media">
+							<div class="row margin-bottom-30">
+								<div class="col">
+									<h2 class="title title-h4">
+										Фото и видео услуги
+									</h2>
+								</div>
+							</div>
+
+							<div class="js-swiper" data-swiper='{"slidesPerView": "auto", "spaceBetween": 20, "slidesOffsetAfter": 20}'>
+								<div class="row">
+									<div class="col">
+										<div class="swiper-container">
+											<div class="swiper-wrapper">
+												{% for media in object.media.all %}
+													{% thumbnail media.photo 0x300 upscale as thumb %}
+													<div class="swiper-slide" style="width:{{ thumb.width }}px;">
+														<a class="photo__item photo__item-media {% if media.youtube_link %}js-modal-video{% else %}js-photo{% endif %}" href="{{ media.photo.url }}" data-video-id="{{ media.get_youtube_id }}">
+															<img src="{{ thumb.url }}" width="{{ thumb.width }}" height="{{ thumb.height }}">
+														</a>
+													</div>
+												{% endfor %}
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="row margin-top-30">
+									<div class="col">
+										<div class="arrow__block">
+											<a class="arrow arrow-left js-swiper-left" href="javascript:void(0);"></a>
+
+											<ul class="arrow__points js-swiper-pagination"></ul>
+
+											<a class="arrow arrow-right js-swiper-right" href="javascript:void(0);"></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endif %}
+
+					{% if object.prices.count %}
+						<div class="padding-top-20 padding-bottom-30" id="price">
+							<div class="row">
+								<div class="col-md-10">
+									<h2 class="title title-h4 margin-bottom-30">
+										Стоимость услуги
+									</h2>
+
+									<div class="pricelist">
+										{% for price in object.prices.all %}
+											<div class="pricelist__row">
+												<div class="pricelist__title">
+													{{ price.title }}
+												</div>
+
+												<div class="pricelist__price">
+													{{ price.price }}
+												</div>
+											</div>
+										{% endfor %}
+									</div>
+
+									{% if object.conclusion %}
+										<div class="padding-top-10" id="conclusion">
+											<div class="row">
+												<div class="col-md-10">
+													<div class="content content-comment js-photo-content">
+														{{ object.conclusion|safe }}
+													</div>
+												</div>
+											</div>
+										</div>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					{% endif %}
+
+					{% if service_list %}
+						<div class="padding-top-20 padding-bottom-30" id="services">
+							<div class="row">
+								<div class="col-md-10">
+									<h2 class="title title-h4 margin-bottom-30">
+										Также другие услуги
+									</h2>
+
+									<div class="row">
+										<div class="col">
+											<div class="content js-photo-content">
+												<ul>
+													{% for service in service_list %}
+														{% if service != object %}
+															<li>
+																<a href="{{ service.get_absolute_url }}">{{ service.title }}</a>
+															</li>
+														{% endif %}
+													{% endfor %}
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+		</div>
+	</section>
+{% endblock content %}
+
+
+{% block footer_js %}
+	<script src="https://cdn.jsdelivr.net/npm/modal-video@2/js/jquery-modal-video.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modal-video@2/css/modal-video.min.css">
+
+	<script>
+		$('.js-modal-video').modalVideo();
+	</script>
+{% endblock footer_js %}
