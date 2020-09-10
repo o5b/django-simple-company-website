@@ -90,4 +90,4 @@ python manage.py loaddata fixtures/db.json
 
 ### Индексирование для haystack
 
-`./manage.py rebuild_index` или `./manage.py update_index`
+`python manage.py rebuild_index` или `python manage.py update_index`
