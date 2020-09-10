@@ -1,3 +1,6 @@
+# в этом файле храняться настройки на период разработки,
+# на рабочем сервере его нужно удалить
+
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -105,6 +108,6 @@ CKEDITOR_CONFIGS = {
 }
 
 
-# email
+# для тестироваиня email
 EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
 EMAIL_FILE_PATH = 'tmp/app-messages'
