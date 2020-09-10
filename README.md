@@ -54,7 +54,7 @@ from django.utils import six
 import six
 ```
 
-2)Чтобы не менять строку с импортом пакета `six` можно самостоятельно добавить файл пакета six (`six.py`) в django.utils (`.env/lib/python3.7/site-packages/django/utils/`)
+2)Чтобы не менять строку с импортом пакета `six` можно самостоятельно добавить файл пакета six (например скопировав `.env/lib/python3.7/site-packages/six.py`)  в django.utils (`.env/lib/python3.7/site-packages/django/utils/`)
 
 Также в файле
 ```
@@ -72,9 +72,8 @@ from django.utils.encoding import force_text
 from six import python_2_unicode_compatible
 ```
 
-### Db
+### Миграции для базы данных
 
-    python manage.py makemigrations
     python manage.py migrate
 
 ### Создаем суперпользователя
@@ -82,7 +81,7 @@ from six import python_2_unicode_compatible
     python manage.py createsuperuser
 
 
-### Наполняем бд тестывыми данными
+### Наполняем базу данных тестывыми данными
 
 ```
 python manage.py loaddata fixtures/db.json
