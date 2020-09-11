@@ -1,4 +1,6 @@
 {% load static %}
+{% load i18n %}
+{% load core_tags %}
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -40,7 +42,7 @@
 	<meta name="msapplication-square70x70logo" content="{% static 'images/mstile-70x70.png' %}">
 	{% endcomment %}
 
-	<title>{% block full_title %}{% block title %}{% endblock %} — Умный дом{% endblock full_title %}</title>
+	<title>{% block full_title %}{% block title %}{% endblock %} — {% trans 'Умный дом' %}{% endblock full_title %}</title>
 
 	<link rel="canonical" href="{{ request.path }}">
 	<link rel="preload" href="{% static 'styles/base.css' %}" as="style">
@@ -60,7 +62,12 @@
 	<header class="header {% block header_class %}header-black{% endblock header_class %}">
 		<div class="container">
 			<div class="row header__row">
+				{% comment %}
 				<div class="col-3 col-sm-4 col-md-3">
+					<a class="header__logo" href="/"></a>
+				</div>
+				{% endcomment %}
+				<div class="col-2 col-sm-2 col-md-2">
 					<a class="header__logo" href="/"></a>
 				</div>
 
@@ -68,7 +75,7 @@
 					<a class="header__appointment js-modal-btn" data-target="appointment" href="javascript:void(0);">Договориться <span> о встрече</span></a>
 				</div>
 
-				<div class="col-6">
+				<div class="col-7">
 					<div class="d-flex justify-content-between">
 						<a class="header__day js-night-btn" href="javascript:void(0);">Ночь</a>
 
@@ -78,7 +85,12 @@
 						</a>
 
 						<div class="header__menuwrap">
-							<a class="header__menu js-menu-btn" href="javascript:void(0);"><span>Меню</span></a>
+							<a class="header__menu js-menu-btn" href="javascript:void(0);"><span>{% trans 'Меню' %}</span></a>
+						</div>
+
+						<div class="d-flex flex-nowrap">
+							<a class="header__language{% if request.LANGUAGE_CODE == 'ru' %} header__language-active{% endif %}" href="{% withoutlangpath %}">RUS</a>
+							<a class="header__language{% if request.LANGUAGE_CODE == 'en' %} header__language-active{% endif %}" href="/en{% withoutlangpath %}">ENG</a>
 						</div>
 					</div>
 				</div>
@@ -111,13 +123,13 @@
 
 						<a class="scroll__address-mobile js-tippy" data-html=".js-tippy-html-want-phone" href="javascript:void(0);"></a>
 						<a class="scroll__search-mobile" href="/search/"></a>
-						<a class="header__day js-night-btn" href="javascript:void(0);">Ночь</a>
+						<a class="header__day js-night-btn" href="javascript:void(0);">{% trans 'Ночь' %}</a>
 					</div>
 				</div>
 
 				<div class="col-2 col-md-2">
 					<a class="scroll__menu js-menu-btn" href="javascript:void(0);">
-						Меню
+						{% trans 'Меню' %}
 					</a>
 				</div>
 			</div>
@@ -130,7 +142,7 @@
 				<div class="col-md-3">
 					<div class="menu__contacts">
 						<div class="menu__title">
-							Умный дом
+							{% trans 'Умный дом' %}
 						</div>
 
 						<div class="menu__address">
@@ -146,7 +158,7 @@
 
 							{% if preference.phone_whatsapp %}
 								<div>
-									<a class="link link-black" href="https://wa.me/{{ preference.phone_whatsapp }}">Написать в WhatsApp</a>
+									<a class="link link-black" href="https://wa.me/{{ preference.phone_whatsapp }}">{% trans 'Написать в WhatsApp' %}</a>
 								</div>
 							{% endif %}
 
@@ -155,7 +167,7 @@
 							</div>
 
 							<div>
-								<a class="link link-black" href="{{ preference.map_link }}">Как проехать</a>
+								<a class="link link-black" href="{{ preference.map_link }}">{% trans 'Как проехать' %}</a>
 							</div>
 						</div>
 
@@ -187,7 +199,7 @@
 
 							<div class="col-12 col-md-3">
 								<div class="menu__namewrap">
-									<a href="javascript:void(0);" class="menu__name js-menu-close">Меню</a>
+									<a href="javascript:void(0);" class="menu__name js-menu-close">{% trans 'Меню' %}</a>
 								</div>
 
 								<div class="menu__namewrap menu__namewrap-mobile">
@@ -199,7 +211,7 @@
 						<div class="row">
 							<div class="col-md-6">
 								<div class="menu__title">
-									Наши услуги
+									{% trans 'Наши услуги' %}
 								</div>
 
 								<ul class="menu__nav">
@@ -219,19 +231,19 @@
 
 								<ul class="menu__nav">
 									<li>
-										<a href="{% url 'main:about' %}">О компании</a>
+										<a href="{% url 'main:about' %}">{% trans 'О компании' %}</a>
 									</li>
 
 									<li>
-										<a href="{% url 'services:price_list' %}">Цены</a>
+										<a href="{% url 'services:price_list' %}">{% trans 'Цены' %}</a>
 									</li>
 
 									<li>
-										<a href="{% url 'services:page_detail' slug='licenses' %}">Лицензия</a>
+										<a href="{% url 'services:page_detail' slug='licenses' %}">{% trans 'Лицензия' %}</a>
 									</li>
 
 									<li>
-										<a href="{% url 'services:page_detail' slug='contacts' %}">Контакты</a>
+										<a href="{% url 'services:page_detail' slug='contacts' %}">{% trans 'Контакты' %}</a>
 									</li>
 								</ul>
 							</div>
@@ -254,7 +266,7 @@
 			{% endif %}
 
 			{% if preference.phone_whatsapp %}
-				<a class="tippy__button tippy__button-whatsapp" href="https://wa.me/{{ preference.phone_whatsapp }}">Написать в WhatsApp</a>
+				<a class="tippy__button tippy__button-whatsapp" href="https://wa.me/{{ preference.phone_whatsapp }}">{% trans 'Написать в WhatsApp' %}</a>
 			{% endif %}
 		</div>
 	</div>
@@ -271,11 +283,11 @@
 					</div>
 
 					<div class="margin-top-20 margin-bottom-20">
-						<a class="link link-white" href="{% url 'services:page_detail' slug='contacts' %}">Контакты</a>
+						<a class="link link-white" href="{% url 'services:page_detail' slug='contacts' %}">{% trans 'Контакты' %}</a>
 					</div>
 
 					<div class="margin-top-20 margin-bottom-20">
-						<a class="link link-white" href="{% url 'services:page_detail' slug='licenses' %}">Лицензия</a>
+						<a class="link link-white" href="{% url 'services:page_detail' slug='licenses' %}">{% trans 'Лицензия' %}</a>
 					</div>
 				</div>
 
@@ -289,7 +301,7 @@
 							{{ preference.footer_address|linebreaksbr }}
 						</p>
 
-						<a class="link link-white" href="{{ preference.map_link }}">Показать на карте</a>
+						<a class="link link-white" href="{{ preference.map_link }}">{% trans 'Показать на карте' %}</a>
 					</div>
 				</div>
 
@@ -315,7 +327,7 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="footer__copyright">
-						<span>2020</span> Компания Умный дом<br/>
+						<span>2020</span> {% trans 'Компания Умный дом' %}<br/>
 					</div>
 				</div>
 
@@ -327,7 +339,7 @@
 
 				<div class="col-md-6">
 					<div class="footer__develop">
-						Дизайн и разработка: <a class="link link-white" href="https://github.com/o5b/">o5b</a>
+						{% trans 'Дизайн и разработка' %}: <a class="link link-white" href="https://github.com/o5b/">o5b</a>
 					</div>
 				</div>
 			</div>

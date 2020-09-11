@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 
 {% block full_title %}{{ preference.site_title }}{% endblock full_title %}
@@ -84,7 +85,7 @@
 				<div class="row">
 					<div class="col-lg-9 offset-lg-3">
 						<h2 class="title margin-bottom-30">
-							Популярные услуги
+							{% trans 'Популярные услуги' %}
 						</h2>
 					</div>
 				</div>

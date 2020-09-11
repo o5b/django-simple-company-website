@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 {% load thumbnail %}
 
 
@@ -12,7 +13,7 @@
 			<div class="row margin-bottom-20">
 				<div class="col-md-5 offset-md-3">
 					<h1 class="title__h1">
-						О компании
+						{% trans 'О компании' %}
 					</h1>
 				</div>
 			</div>
@@ -21,11 +22,11 @@
 				<div class="col offset-md-3">
 					<ul class="breadcrumb">
 						<li>
-							<a href="/">Главная</a>
+							<a href="/">{% trans 'Главная' %}</a>
 						</li>
 
 						<li>
-							О компании
+							{% trans 'О компании' %}
 						</li>
 					</ul>
 				</div>
@@ -39,15 +40,15 @@
 				<div class="col-md-3">
 					<ul class="subnav js-subnav-fixed">
 						<li class="subnav__item subnav__item-active">
-							<a class="subnav__a js-subnav-link" href="#about">О компании</a>
+							<a class="subnav__a js-subnav-link" href="#about">{% trans 'О компании' %}</a>
 						</li>
 
 						<li class="subnav__item">
-							<a class="subnav__a" href="{% url "services:page_detail" slug="licenses" %}">Лицензии</a>
+							<a class="subnav__a" href="{% url "services:page_detail" slug="licenses" %}">{% trans 'Лицензии' %}</a>
 						</li>
 
 						<li class="subnav__item">
-							<a class="subnav__a" href="{% url "services:page_detail" slug="contacts" %}">Контакты</a>
+							<a class="subnav__a" href="{% url "services:page_detail" slug="contacts" %}">{% trans 'Контакты' %}</a>
 						</li>
 					</ul>
 				</div>

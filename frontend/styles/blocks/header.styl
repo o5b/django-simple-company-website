@@ -258,3 +258,26 @@
 			content ''
 			transition all .4s ease
 			transform translateY(-50%)
+
+	&__language
+		margin-right 5px
+		margin-left 5px
+		margin-top 12px
+		// border-bottom 1px solid transparent
+		color $white
+		text-transform uppercase
+		// white-space nowrap
+		// font-weight 700
+		font-size 1.2rem
+		// line-height 1
+
+		&:hover
+			border-color $white
+			color $white
+
+		&-active
+			color alpha($white, .7)
+
+			&:hover
+				border-color $white
+				color $white

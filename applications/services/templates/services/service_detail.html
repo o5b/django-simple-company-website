@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 {% load thumbnail %}
 
 
@@ -27,7 +28,7 @@
 					<div class="col">
 						<ul class="breadcrumb">
 							<li>
-								<a href="/">Главная</a>
+								<a href="/">{% trans 'Главная' %}</a>
 							</li>
 
 							<li>
@@ -63,7 +64,7 @@
 					<div class="col offset-md-3">
 						<ul class="breadcrumb">
 							<li>
-								<a href="/">Главная</a>
+								<a href="/">{% trans 'Главная' %}</a>
 							</li>
 
 							<li>
@@ -82,24 +83,24 @@
 				<div class="col-md-3">
 					<ul class="subnav js-subnav-fixed">
 						<li class="subnav__item subnav__item-active">
-							<a class="subnav__a js-subnav-link" href="#about">Об услуге</a>
+							<a class="subnav__a js-subnav-link" href="#about">{% trans 'Об услуге' %}</a>
 						</li>
 
 						{% if object.media.count %}
 							<li class="subnav__item">
-								<a class="subnav__a js-subnav-link" href="#media">Фото и видео</a>
+								<a class="subnav__a js-subnav-link" href="#media">{% trans 'Фото и видео' %}</a>
 							</li>
 						{% endif %}
 
 						{% if object.prices.count %}
 							<li class="subnav__item">
-								<a class="subnav__a js-subnav-link" href="#price">Цены на услугу</a>
+								<a class="subnav__a js-subnav-link" href="#price">{% trans 'Цены на услугу' %}</a>
 							</li>
 						{% endif %}
 
 						{% if service_list %}
 							<li class="subnav__item">
-								<a class="subnav__a js-subnav-link" href="#services">Другие услуги</a>
+								<a class="subnav__a js-subnav-link" href="#services">{% trans 'Другие услуги' %}</a>
 							</li>
 						{% endif %}
 					</ul>
@@ -129,7 +130,7 @@
 							<div class="row margin-bottom-30">
 								<div class="col">
 									<h2 class="title title-h4">
-										Фото и видео услуги
+										{% trans 'Фото и видео услуги' %}
 									</h2>
 								</div>
 							</div>
@@ -172,7 +173,7 @@
 							<div class="row">
 								<div class="col-md-10">
 									<h2 class="title title-h4 margin-bottom-30">
-										Стоимость услуги
+										{% trans 'Стоимость услуги' %}
 									</h2>
 
 									<div class="pricelist">
@@ -210,7 +211,7 @@
 							<div class="row">
 								<div class="col-md-10">
 									<h2 class="title title-h4 margin-bottom-30">
-										Также другие услуги
+										{% trans 'Также другие услуги' %}
 									</h2>
 
 									<div class="row">

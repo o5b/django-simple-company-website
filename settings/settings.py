@@ -26,6 +26,7 @@ THIRD_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'easy_thumbnails',
     'haystack',
+    'rosetta',
     'singlemodeladmin',
 ]
 
@@ -41,6 +42,7 @@ INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + CUSTOM_APPS
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -89,6 +91,15 @@ USE_I18N = True
 USE_L10N = True
 USE_TZ = True
 SITE_ID = 1
+
+
+LANGUAGES = [
+    ('ru', 'Russian'),
+    ('en', 'English'),
+]
+
+
+LOCALE_PATHS = [os.path.join(BASE_DIR, 'locale')]
 
 
 STATICFILES_DIRS = (

@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 
-{% block title %}Наши цены{% endblock title %}
+{% block title %}{% trans 'Наши цены' %}{% endblock title %}
 
 
 {% block content %}
@@ -11,7 +12,7 @@
 			<div class="row margin-bottom-20">
 				<div class="col-md-5 offset-md-3">
 					<h1 class="title__h1">
-						Наши цены
+						{% trans 'Наши цены' %}
 					</h1>
 				</div>
 			</div>
@@ -20,11 +21,11 @@
 				<div class="col offset-md-3">
 					<ul class="breadcrumb">
 						<li>
-							<a href="/">Главная</a>
+							<a href="/">{% trans 'Главная' %}</a>
 						</li>
 
 						<li>
-							Наши цены
+							{% trans 'Наши цены' %}
 						</li>
 					</ul>
 				</div>

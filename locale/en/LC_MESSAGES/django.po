@@ -1,0 +1,145 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-11 15:33+0300\n"
+"PO-Revision-Date: 2020-09-11 20:14+0202\n"
+"Last-Translator: b'  <admin@admin.com>'\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Translated-Using: django-rosetta 0.9.4\n"
+
+#: applications/capture/models.py:17
+msgid "Телефон"
+msgstr "Telephone"
+
+#: applications/capture/models.py:22
+msgid "Имя, фамилия"
+msgstr "First Name Last Name"
+
+#: applications/capture/models.py:28
+msgid "Комментарий"
+msgstr "A comment"
+
+#: applications/capture/models.py:33
+msgid "Время"
+msgstr "Time"
+
+#: applications/main/templates/main/about.html:15
+#: applications/main/templates/main/about.html:28
+#: applications/main/templates/main/about.html:42 templates/base.html:224
+msgid "О компании"
+msgstr "About company"
+
+#: applications/main/templates/main/about.html:24
+#: applications/main/templates/main/page_detail.html:23
+#: applications/services/templates/services/price_list.html:23
+#: applications/services/templates/services/service_detail.html:30
+#: applications/services/templates/services/service_detail.html:66
+msgid "Главная"
+msgstr "Home"
+
+#: applications/main/templates/main/about.html:46
+msgid "Лицензии"
+msgstr "Licenses"
+
+#: applications/main/templates/main/about.html:50 templates/base.html:236
+#: templates/base.html:276
+msgid "Контакты"
+msgstr "Contacts"
+
+#: applications/main/templates/main/index.html:87
+msgid "Популярные услуги"
+msgstr "Popular services"
+
+#: applications/main/templates/main/page_detail.html:40
+msgid "Если у Вас остались вопросы — позвоните нам"
+msgstr "If you have any questions - call us"
+
+#: applications/services/templates/services/price_list.html:5
+#: applications/services/templates/services/price_list.html:14
+#: applications/services/templates/services/price_list.html:27
+msgid "Наши цены"
+msgstr "Our prices"
+
+#: applications/services/templates/services/service_detail.html:85
+msgid "Об услуге"
+msgstr "About the service"
+
+#: applications/services/templates/services/service_detail.html:90
+msgid "Фото и видео"
+msgstr "Photo and video"
+
+#: applications/services/templates/services/service_detail.html:96
+msgid "Цены на услугу"
+msgstr "Service prices"
+
+#: applications/services/templates/services/service_detail.html:102
+msgid "Другие услуги"
+msgstr "other services"
+
+#: applications/services/templates/services/service_detail.html:132
+msgid "Фото и видео услуги"
+msgstr "Photo and video services"
+
+#: applications/services/templates/services/service_detail.html:175
+msgid "Стоимость услуги"
+msgstr "Service cost"
+
+#: applications/services/templates/services/service_detail.html:213
+msgid "Также другие услуги"
+msgstr "Also other services"
+
+#: templates/base.html:45 templates/base.html:135
+msgid "Умный дом"
+msgstr "Smart House"
+
+#: templates/base.html:83 templates/base.html:122 templates/base.html:192
+msgid "Меню"
+msgstr "Menu"
+
+#: templates/base.html:116
+msgid "Ночь"
+msgstr "Night"
+
+#: templates/base.html:151 templates/base.html:259
+msgid "Написать в WhatsApp"
+msgstr "Write to WhatsApp"
+
+#: templates/base.html:160
+msgid "Как проехать"
+msgstr "How can I get to"
+
+#: templates/base.html:204
+msgid "Наши услуги"
+msgstr "Our services"
+
+#: templates/base.html:228
+msgid "Цены"
+msgstr "Prices"
+
+#: templates/base.html:232 templates/base.html:280
+msgid "Лицензия"
+msgstr "License"
+
+#: templates/base.html:294
+msgid "Показать на карте"
+msgstr "To show on the map"
+
+#: templates/base.html:320
+msgid "Компания Умный дом"
+msgstr "Smart home company"
+
+#: templates/base.html:332
+msgid "Дизайн и разработка"
+msgstr "Design and development"

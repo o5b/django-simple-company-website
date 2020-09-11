@@ -3,6 +3,7 @@ from django.core.exceptions import ValidationError
 from django.core.mail import send_mail
 from django.db import models
 from django.template.loader import render_to_string
+from django.utils.translation import gettext_lazy as _
 
 from applications.main.models import Preference
 
@@ -13,23 +14,23 @@ class Appointment(models.Model):
     """
 
     phone = models.CharField(
-        verbose_name='Телефон',
+        verbose_name=_('Телефон'),
         max_length=50,
     )
 
     name = models.CharField(
-        verbose_name='Имя, фамилия',
+        verbose_name=_('Имя, фамилия'),
         max_length=50,
         blank=True,
     )
 
     comment = models.TextField(
-        verbose_name='Комментарий',
+        verbose_name=_('Комментарий'),
         blank=True,
     )
 
     time = models.CharField(
-        verbose_name='Время',
+        verbose_name=_('Время'),
         max_length=50,
         blank=True,
     )

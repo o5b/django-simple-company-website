@@ -25,3 +25,11 @@ def get_youtube_id(value):
     if g:
         return g.groups()[0]
     return value
+
+
+@register.simple_tag(takes_context=True)
+def withoutlangpath(context):
+    request = context.get('request')
+    if '/en/' in request.path:
+        return request.path[3:]
+    return request.path
