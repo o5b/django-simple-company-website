@@ -62,22 +62,17 @@
 	<header class="header {% block header_class %}header-black{% endblock header_class %}">
 		<div class="container">
 			<div class="row header__row">
-				{% comment %}
-				<div class="col-3 col-sm-4 col-md-3">
-					<a class="header__logo" href="/"></a>
-				</div>
-				{% endcomment %}
-				<div class="col-2 col-sm-2 col-md-2">
+				<div class="col-1 col-sm-2 col-md-1">
 					<a class="header__logo" href="/"></a>
 				</div>
 
 				<div class="col-3 col-sm-3 col-md-3">
-					<a class="header__appointment js-modal-btn" data-target="appointment" href="javascript:void(0);">Договориться <span> о встрече</span></a>
+					<a class="header__appointment js-modal-btn" data-target="appointment" href="javascript:void(0);">{% blocktrans %}Записаться<span> на встречу</span>{% endblocktrans %}</a>
 				</div>
 
-				<div class="col-7">
+				<div class="col-8">
 					<div class="d-flex justify-content-between">
-						<a class="header__day js-night-btn" href="javascript:void(0);">Ночь</a>
+						<a class="header__day js-night-btn" href="javascript:void(0);">{% trans 'Ночь' %}</a>
 
 						<a class="header__phone js-tippy" data-html=".js-tippy-html-want-phone" href="javascript:void(0);">
 							{{ preference.phone }}<br>
@@ -88,9 +83,9 @@
 							<a class="header__menu js-menu-btn" href="javascript:void(0);"><span>{% trans 'Меню' %}</span></a>
 						</div>
 
-						<div class="d-flex flex-nowrap">
-							<a class="header__language{% if request.LANGUAGE_CODE == 'ru' %} header__language-active{% endif %}" href="{% withoutlangpath %}">RUS</a>
-							<a class="header__language{% if request.LANGUAGE_CODE == 'en' %} header__language-active{% endif %}" href="/en{% withoutlangpath %}">ENG</a>
+						<div>
+							<a class="header__language{% if request.LANGUAGE_CODE == 'ru' %} header__language-active{% endif %}" href="{% withoutlangpath %}">RU</a>
+							<a class="header__language{% if request.LANGUAGE_CODE == 'en' %} header__language-active{% endif %}" href="/en{% withoutlangpath %}">EN</a>
 						</div>
 					</div>
 				</div>
@@ -103,13 +98,13 @@
 	<div class="scroll js-menu-scroll">
 		<div class="container scroll__container">
 			<div class="row no-gutters">
-				<div class="col-4 col-md-3">
+				<div class="col-3 col-md-2">
 					<a class="scroll__appointment js-modal-btn" data-target="appointment" href="javascript:void(0);">
-						Договориться <span> о встрече</span>
+						{% blocktrans %}Записаться<span> на встречу</span>{% endblocktrans %}
 					</a>
 				</div>
 
-				<div class="col-6 col-md-7">
+				<div class="col-7 col-md-8">
 					<div class="scroll__content">
 						<a class="scroll__phone js-tippy" data-html=".js-tippy-html-want-phone" href="javascript:void(0);">
 							{{ preference.phone }}<br>
@@ -117,13 +112,15 @@
 						</a>
 
 						<form class="search scroll__search" action="/search/" method="get">
-							<input type="search" name="q" placeholder="Поиск по сайту">
+							<input type="search" name="q" placeholder="{% trans 'Поиск по сайту' %}">
 							<button type="submit"></button>
 						</form>
 
 						<a class="scroll__address-mobile js-tippy" data-html=".js-tippy-html-want-phone" href="javascript:void(0);"></a>
 						<a class="scroll__search-mobile" href="/search/"></a>
 						<a class="header__day js-night-btn" href="javascript:void(0);">{% trans 'Ночь' %}</a>
+						<a class="header__language{% if request.LANGUAGE_CODE == 'ru' %} header__language-active{% endif %}" href="{% withoutlangpath %}">RU</a>
+						<a class="header__language{% if request.LANGUAGE_CODE == 'en' %} header__language-active{% endif %}" href="/en{% withoutlangpath %}">EN</a>
 					</div>
 				</div>
 
@@ -192,7 +189,7 @@
 						<div class="row menu__row">
 							<div class="col-12 col-md-9">
 								<form class="search menu__search" action="/search/" method="get">
-									<input type="search" name="q" placeholder="Поиск по сайту">
+									<input type="search" name="q" placeholder="{% trans 'Поиск по сайту' %}">
 									<button type="submit">
 								</form>
 							</div>
@@ -277,7 +274,7 @@
 				<div class="col-md-4 col-sm-12">
 					<div>
 						<form class="search footer__search" action="/search/" method="get">
-							<input type="search" name="q" placeholder="Поиск по сайту">
+							<input type="search" name="q" placeholder="{% trans 'Поиск по сайту' %}">
 							<button type="submit">
 						</form>
 					</div>
@@ -333,7 +330,7 @@
 
 				<div class="col-md-3">
 					<div class="footer__politics">
-						Политика <a class="link link-white" href="{% url 'services:page_detail' slug='policy' %}">конфиденциальности</a>
+						<a class="link link-white" href="{% url 'services:page_detail' slug='policy' %}">{% trans 'Политика конфиденциальности' %}</a>
 					</div>
 				</div>
 

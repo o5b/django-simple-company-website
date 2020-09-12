@@ -81,12 +81,33 @@ from six import python_2_unicode_compatible
     python manage.py createsuperuser
 
 
-### Наполняем базу данных тестывыми данными
+#### Наполнить базу данных тестывыми данными
 
 ```
 python manage.py loaddata fixtures/db.json
 ```
 
+#### Сохранить данные из бд в fixtures
+
+```
+python manage.py dumpdata capture main services --indent 2 > fixtures/db.json
+```
+
 ### Индексирование для haystack
 
 `python manage.py rebuild_index` или `python manage.py update_index`
+
+
+### django-modeltranslation
+
+#### Синхронизируем поля модели
+
+```
+python manage.py sync_translation_field
+```
+
+#### Наполняем добавленные к модели новые поля данными которые были в модели изначально
+
+```
+python manage.py update_translation_fields
+```

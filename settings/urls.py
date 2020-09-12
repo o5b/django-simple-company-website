@@ -56,7 +56,8 @@ urlpatterns += i18n_patterns(
         include(('applications.services.urls', 'services'), namespace='services'),
     ),
 
-    prefix_default_language=False)
+    prefix_default_language=False
+)
 
 urlpatterns += staticfiles_urlpatterns() + \
     static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

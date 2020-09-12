@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <div class="modal js-modal" data-modal="appointment">
 	<div class="modal__overlay js-modal-close"></div>
 
@@ -8,7 +10,7 @@
 			<div class="js-form-success-hide">
 				<div class="row margin-bottom-20">
 					<div class="col-sm-3">
-						<label class="form__label" for="id_phone">Телефон</label>
+						<label class="form__label" for="id_phone">{% trans 'Телефон' %}</label>
 					</div>
 
 					<div class="col-sm-9">
@@ -19,31 +21,31 @@
 				<div class="js-appointment-detail" style="display:none;">
 					<div class="row margin-bottom-20">
 						<div class="col-sm-3">
-							<label class="form__label" for="id_time">Дата и время</label>
+							<label class="form__label" for="id_time">{% trans 'Дата и время' %}</label>
 						</div>
 
 						<div class="col-sm-9">
-							<input class="form__input js-flatpickr" id="id_time" name="time" placeholder="Выберите удобное время">
+							<input class="form__input js-flatpickr" id="id_time" name="time" placeholder="{% trans 'Выберите удобное время' %}">
 						</div>
 					</div>
 
 					<div class="row margin-bottom-20">
 						<div class="col-sm-3">
-							<label class="form__label" for="id_name">Имя, фамилия</label>
+							<label class="form__label" for="id_name">{% trans 'Имя, фамилия' %}</label>
 						</div>
 
 						<div class="col-sm-9">
-							<input class="form__input" id="id_name" type="text" name="name" placeholder="Как к Вам обращаться?">
+							<input class="form__input" id="id_name" type="text" name="name" placeholder="{% trans 'Как к Вам обращаться?' %}">
 						</div>
 					</div>
 
 					<div class="row margin-bottom-20">
 						<div class="col-sm-3">
-							<label class="form__label" for="id_comment">Комментарий</label>
+							<label class="form__label" for="id_comment">{% trans 'Комментарий' %}</label>
 						</div>
 
 						<div class="col-sm-9">
-							<input class="form__input" id="id_comment" type="text" name="comment" placeholder="Не обязательно...">
+							<input class="form__input" id="id_comment" type="text" name="comment" placeholder="{% trans 'Не обязательно...' %}">
 						</div>
 					</div>
 				</div>
@@ -51,12 +53,12 @@
 				<div class="row">
 					<div class="col">
 						<div class="d-flex flex-wrap flex-sm-nowrap margin-bottom-20 text-center">
-							<span class="btn btn-block js-appointment-detail-btn">Дополнительные параметры записи</span>
+							<span class="btn btn-block js-appointment-detail-btn">{% trans 'Дополнительные параметры записи' %}</span>
 
 							<div class="d-none d-sm-block" style="width:30px;"></div>
 							<div class="d-block d-sm-none" style="width:100%;height:10px;"></div>
 
-							<button class="form__button btn-block" type="submit">Записаться</button>
+							<button class="form__button btn-block" type="submit">{% trans 'Записаться' %}</button>
 						</div>
 					</div>
 				</div>
@@ -64,7 +66,7 @@
 				<div class="row">
 					<div class="col">
 						<div class="margin-bottom-20 text-center">
-							<a class="btn btn-whatsapp" href="https://wa.me/{{ preference.phone_whatsapp }}">Записаться через WhatsApp</a>
+							<a class="btn btn-whatsapp" href="https://wa.me/{{ preference.phone_whatsapp }}">{% trans 'Записаться через WhatsApp' %}</a>
 						</div>
 					</div>
 				</div>
@@ -72,7 +74,7 @@
 				<div class="row">
 					<div class="col">
 						<label class="text-center" for="id_policy_appointment">
-							Нажимая на кнопку «Записаться», вы даёте согласие на обработку персональных данных и соглашаетесь с <a class="link link-nowrap" href="{% url 'services:page_detail' slug='policy' %}">политикой конфиденциальности</a>
+							{% trans 'Нажимая на кнопку «Записаться», вы даёте согласие на обработку персональных данных и соглашаетесь с' %} <a class="link link-nowrap" href="{% url 'services:page_detail' slug='policy' %}">{% trans 'политикой конфиденциальности' %}</a>
 						</label>
 					</div>
 				</div>
@@ -81,11 +83,11 @@
 			<div class="js-form-success-show" style="display:none;">
 				<div class="text-center">
 					<p class="h2">
-						Спасибо!
+						{% trans 'Спасибо!' %}
 					</p>
 
 					<p class="h3">
-						Наш администратор свяжется с Вами в ближайшее время.
+						{% trans 'Наш администратор свяжется с Вами в ближайшее время.' %}
 					</p>
 				</div>
 			</div>

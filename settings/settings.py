@@ -26,6 +26,7 @@ THIRD_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'easy_thumbnails',
     'haystack',
+    # 'modeltranslation',
     'rosetta',
     'singlemodeladmin',
 ]
@@ -37,7 +38,7 @@ CUSTOM_APPS = [
     'applications.services',
 ]
 
-INSTALLED_APPS = DJANGO_APPS + THIRD_APPS + CUSTOM_APPS
+INSTALLED_APPS = ['modeltranslation'] + DJANGO_APPS + THIRD_APPS + CUSTOM_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

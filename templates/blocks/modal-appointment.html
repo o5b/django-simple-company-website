@@ -1,3 +1,5 @@
+{% load i18n %}
+
 <div class="modal js-modal" data-modal="appointment">
 	<div class="modal__overlay js-modal-close"></div>
 
@@ -8,17 +10,17 @@
 			<div class="js-form-success-hide">
 				<div class="row margin-bottom-20">
 					<div class="col-sm-3">
-						<label class="form__label" for="id_name">Имя, фамилия</label>
+						<label class="form__label" for="id_name">{% trans 'Имя, фамилия' %}</label>
 					</div>
 
 					<div class="col-sm-9">
-						<input class="form__input" id="id_name" type="text" name="name" placeholder="Как к Вам обращаться?" required>
+							<input class="form__input" id="id_name" type="text" name="name" placeholder="{% trans 'Как к Вам обращаться?' %}" required>
 					</div>
 				</div>
 
 				<div class="row margin-bottom-20">
 					<div class="col-sm-3">
-						<label class="form__label" for="id_phone">Телефон</label>
+							<label class="form__label" for="id_phone">{% trans 'Телефон' %}</label>
 					</div>
 
 					<div class="col-sm-9">
@@ -28,25 +30,25 @@
 
 				<div class="row margin-bottom-20">
 					<div class="col-sm-3">
-						<label class="form__label" for="id_comment">Комментарий</label>
+						<label class="form__label" for="id_comment">{% trans 'Комментарий' %}</label>
 					</div>
 
 					<div class="col-sm-9">
-						<input class="form__input" id="id_comment" type="text" name="comment" placeholder="Не обязательно...">
+						<input class="form__input" id="id_comment" type="text" name="comment" placeholder="{% trans 'Не обязательно...' %}">
 					</div>
 				</div>
 
 				<div class="row margin-bottom-50">
 					<div class="col-sm-9 offset-sm-3">
 						<label for="id_policy">
-							<input class="form__policy" id="id_policy" type="checkbox" required> Ознакомлен и согласен с <a class="link" href="{% url 'services:page_detail' slug='policy' %}">политикой конфиденциальности</a>
+							<input class="form__policy" id="id_policy" type="checkbox" required>{% trans 'Ознакомлен и согласен с' %} <a class="link" href="{% url 'services:page_detail' slug='policy' %}">{% trans 'политикой конфиденциальности' %}</a>
 						</label>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-sm-9 offset-sm-3">
-						<button class="form__button" type="submit">Записаться</button>
+						<button class="form__button" type="submit">{% trans 'Записаться' %}</button>
 					</div>
 				</div>
 			</div>
@@ -54,11 +56,11 @@
 			<div class="js-form-success-show" style="display:none;">
 				<div class="text-center">
 					<p class="h2">
-						Спасибо!
+						{% trans 'Спасибо!' %}
 					</p>
 
 					<p class="h3">
-						Наш администратор свяжется с Вами в ближайшее время.
+						{% trans 'Наш администратор свяжется с Вами в ближайшее время.' %}
 					</p>
 				</div>
 			</div>
