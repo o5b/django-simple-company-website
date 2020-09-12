@@ -106,7 +106,7 @@ python manage.py dumpdata capture main services --indent 2 > fixtures/db.json
 python manage.py sync_translation_field
 ```
 
-#### Наполняем добавленные к модели новые поля данными которые были в модели изначально
+#### Добавленные к модели новые поля наполняем данными, которые были в модели изначально
 
 ```
 python manage.py update_translation_fields
