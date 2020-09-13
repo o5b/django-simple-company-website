@@ -607,7 +607,6 @@
     "description_ru": "Современное видеонаблюдение, легко интегрируется в систему умного дома",
     "description_en": "Modern video surveillance, easily integrates into a smart home system",
     "photo": "services/popular/photo/0f6bfc2bfb4c4f8db7f46e4a513c111f.jpg",
-    "link": "http://localhost:8000/video-ip/",
     "order": 6
   }
 },
@@ -626,7 +625,6 @@
     "description_ru": "Проектирование умного дома",
     "description_en": "Smart home design",
     "photo": "services/popular/photo/ad83a4e5644a428d967dc55ab1771514.jpg",
-    "link": "http://localhost:8000/proektirovanie-umnogo-doma/",
     "order": 7
   }
 },
@@ -645,7 +643,6 @@
     "description_ru": "Первичная настройка в соответствии с проектом",
     "description_en": "Initial configuration in accordance with the project",
     "photo": "services/popular/photo/1a5403750d7c4627be988983de2c15cc.jpg",
-    "link": "http://localhost:8000/nastrojka-i-programmirovanie-umnogo-doma-pered-ust/",
     "order": 8
   }
 },
@@ -664,7 +661,6 @@
     "description_ru": "Установка оборудования на объекте",
     "description_en": "Installation of equipment on site",
     "photo": "services/popular/photo/44c8eecfeea747e49eec7b35cc8de339.jpg",
-    "link": "http://localhost:8000/montaj-umnogo-doma/",
     "order": 9
   }
 }

@@ -189,11 +189,6 @@ class Popular(Common):
         help_text='JPG. 400x400',
     )
 
-    link = models.URLField(
-        verbose_name='Ссылка',
-        max_length=300,
-    )
-
     order = models.PositiveIntegerField(
         verbose_name='Порядок',
         default=0,
