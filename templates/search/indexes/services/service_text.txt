@@ -1,5 +1,4 @@
-{{ object.title }}
-{{ object.content }}
-{% for price in object.prices.all %}
-	{{ price.title }}
-{% endfor %}
+{{ object.title_ru }}
+{{ object.content_ru }}
+{{ object.title_en }}
+{{ object.content_en }}

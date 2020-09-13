@@ -63,7 +63,7 @@
 		<div class="container">
 			<div class="row header__row">
 				<div class="col-1 col-sm-2 col-md-1">
-					<a class="header__logo" href="/"></a>
+					<a class="header__logo" href="{% url 'main:index' %}"></a>
 				</div>
 
 				<div class="col-3 col-sm-3 col-md-3">
@@ -111,7 +111,7 @@
 							{{ preference.address }}
 						</a>
 
-						<form class="search scroll__search" action="/search/" method="get">
+						<form class="search scroll__search" action="{% url 'haystack_search' %}" method="get">
 							<input type="search" name="q" placeholder="{% trans 'Поиск по сайту' %}">
 							<button type="submit"></button>
 						</form>
@@ -188,7 +188,7 @@
 					<div class="menu__main">
 						<div class="row menu__row">
 							<div class="col-12 col-md-9">
-								<form class="search menu__search" action="/search/" method="get">
+								<form class="search menu__search" action="{% url 'haystack_search' %}" method="get">
 									<input type="search" name="q" placeholder="{% trans 'Поиск по сайту' %}">
 									<button type="submit">
 								</form>
@@ -273,7 +273,7 @@
 			<div class="row">
 				<div class="col-md-4 col-sm-12">
 					<div>
-						<form class="search footer__search" action="/search/" method="get">
+						<form class="search footer__search" action="{% url 'haystack_search' %}" method="get">
 							<input type="search" name="q" placeholder="{% trans 'Поиск по сайту' %}">
 							<button type="submit">
 						</form>

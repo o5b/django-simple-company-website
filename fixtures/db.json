@@ -598,7 +598,8 @@
   "fields": {
     "status": "published",
     "created": "2020-08-25T19:39:51.865Z",
-    "modified": "2020-09-12T11:47:07.700Z",
+    "modified": "2020-09-13T09:51:38.640Z",
+    "service": 7,
     "title": "IP видеонаблюдение",
     "title_ru": "IP видеонаблюдение",
     "title_en": "IP video surveillance",
@@ -617,6 +618,7 @@
     "status": "published",
     "created": "2020-08-25T19:45:22.512Z",
     "modified": "2020-09-12T11:47:42.343Z",
+    "service": 1,
     "title": "Умный дом - проектирование",
     "title_ru": "Умный дом - проектирование",
     "title_en": "Smart home - design",
@@ -634,7 +636,8 @@
   "fields": {
     "status": "published",
     "created": "2020-08-25T19:53:53.127Z",
-    "modified": "2020-09-12T11:48:15.936Z",
+    "modified": "2020-09-13T09:51:55.129Z",
+    "service": 2,
     "title": "Настройка умного дома перед установкой",
     "title_ru": "Настройка умного дома перед установкой",
     "title_en": "Setting up a smart home before installation",
@@ -652,7 +655,8 @@
   "fields": {
     "status": "published",
     "created": "2020-08-25T20:11:37.057Z",
-    "modified": "2020-09-12T11:51:53.412Z",
+    "modified": "2020-09-13T09:52:03.759Z",
+    "service": 8,
     "title": "Монтаж умного дома",
     "title_ru": "Монтаж умного дома",
     "title_en": "Smart home installation",

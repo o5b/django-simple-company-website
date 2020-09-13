@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 
 {% block head %}
@@ -8,7 +9,7 @@
 {% endblock head %}
 
 
-{% block title %}Результаты запроса по: {{ request.GET.q }}{% endblock title %}
+{% block title %}{% trans 'Результаты запроса по:' %} {{ request.GET.q }}{% endblock title %}
 
 
 {% block content %}
@@ -18,10 +19,9 @@
 				<div class="col col-md-8">
 					<div class="content">
 						<div class="margin-bottom-50">
-							Результаты запроса по:
-
+							{% trans 'Результаты запроса по:' %}
 							<form action="" method="get">
-								<input class="form__input" id="id_q" type="text" name="q" placeholder="Введите текст запроса" value="{{ request.GET.q }}">
+								<input class="form__input" id="id_q" type="text" name="q" placeholder="{% trans 'Введите текст запроса' %}" value="{{ request.GET.q }}">
 							</form>
 						</div>
 
@@ -33,33 +33,47 @@
 									<div class="margin-bottom-30">
 										<h3 class="margin-bottom-20">
 											{% if content_type.grouper == "main.page" %}
-												Страницы:
+												{% trans 'Страницы' %}:
 											{% elif content_type.grouper == "main.about" %}
-												О компании:
+												{% trans 'О компании' %}:
+											{% elif content_type.grouper == "main.index" %}
+												{% trans 'Главная'%}:
 											{% elif content_type.grouper == "services.service" %}
-												Услуги:
+												{% trans 'Услуги' %}:
 											{% endif %}
 										</h3>
 
 										<ul>
-											{% for r in content_type.list %}
-												<li>
-													<a href="{{ r.object.get_absolute_url }}?highlight={{ request.GET.q }}">
-														{{ r.object.title }}
-													</a>
-												</li>
+											{% for result in content_type.list %}
+												{% if content_type.grouper == 'main.index' %}
+													<li>
+														<a href="{% url 'main:index' %}?highlight={{ request.GET.q }}">{{ result.object.content_1|safe|striptags|truncatewords_html:10 }}</a>
+													</li>
+												{% elif content_type.grouper == 'main.about' %}
+													<li>
+														<a href="{% url 'main:about' %}?highlight={{ request.GET.q }}">{{ result.object.content_1|safe|striptags|truncatewords_html:10 }}</a>
+													</li>
+												{% elif content_type.grouper == 'main.page' %}
+													<li>
+														<a href="{{ result.object.get_absolute_url }}?highlight={{ request.GET.q }}">{{ result.object.title }}</a>
+													</li>
+												{% elif content_type.grouper == "services.service" %}
+													<li>
+														<a href="{{ result.object.get_absolute_url }}?highlight={{ request.GET.q }}">{{ result.object.title }}</a>
+													</li>
+												{% endif %}
 											{% endfor %}
 										</ul>
 									</div>
 								{% empty %}
 									<p class="text-muted">
-										По Вашему запросу информации на сайте не найдено.
+										{% trans 'По Вашему запросу информации на сайте не найдено.' %}
 									</p>
 								{% endfor %}
 							</div>
 
 							<div>
-								<span>Страницы:&emsp;</span>
+								<span>{% trans 'Страницы:' %}&emsp;</span>
 								<span class="pagination">
 									{% for p in paginator.page_range %}
 										<a class="pagination__page {% if p == page.number %}pagination__page-active{% endif %}" href="/search/?q={{ request.GET.q }}&amp;page={{ p }}">{{ p }}</a>
@@ -68,7 +82,7 @@
 							</div>
 						{% else %}
 							<p class="text-center">
-								Воспользуйтесь панелью поиска
+								{% trans 'Воспользуйтесь панелью поиска' %}
 							</p>
 						{% endif %}
 					</div>

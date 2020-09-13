@@ -37,13 +37,13 @@ urlpatterns = [
 
 urlpatterns += i18n_patterns(
     path(
-        'capture/',
-        include(('applications.capture.urls', 'capture'), namespace='capture'),
+        'search/',
+        include('haystack.urls'),
     ),
 
     path(
-        'search/',
-        include('haystack.urls'),
+        'capture/',
+        include(('applications.capture.urls', 'capture'), namespace='capture'),
     ),
 
     path(

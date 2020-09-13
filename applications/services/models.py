@@ -164,6 +164,13 @@ class Popular(Common):
     Популярные услуги
     """
 
+    service = models.OneToOneField(
+        verbose_name='Услуга',
+        to=Service,
+        on_delete=models.CASCADE,
+        related_name='popular',
+    )
+
     title = models.CharField(
         verbose_name='Название',
         max_length=200,

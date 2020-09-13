@@ -1,5 +1,3 @@
-{{ object.comment_ru }}
-{{ object.comment_en }}
 {{ object.content_1_ru }}
 {{ object.content_1_en }}
 {{ object.content_2_ru }}

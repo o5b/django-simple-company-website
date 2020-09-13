@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-12 17:37+0300\n"
+"POT-Creation-Date: 2020-09-13 14:31+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -44,7 +44,8 @@ msgstr ""
 
 #: applications/main/templates/main/about.html:16
 #: applications/main/templates/main/about.html:29
-#: applications/main/templates/main/about.html:43 templates/base.html:240
+#: applications/main/templates/main/about.html:43 templates/base.html:232
+#: templates/search/search.html:38
 msgid "О компании"
 msgstr ""
 
@@ -53,6 +54,7 @@ msgstr ""
 #: applications/services/templates/services/price_list.html:24
 #: applications/services/templates/services/service_detail.html:31
 #: applications/services/templates/services/service_detail.html:67
+#: templates/search/search.html:40
 msgid "Главная"
 msgstr ""
 
@@ -60,8 +62,8 @@ msgstr ""
 msgid "Лицензии"
 msgstr ""
 
-#: applications/main/templates/main/about.html:51 templates/base.html:252
-#: templates/base.html:292
+#: applications/main/templates/main/about.html:51 templates/base.html:244
+#: templates/base.html:284
 msgid "Контакты"
 msgstr ""
 
@@ -107,59 +109,59 @@ msgstr ""
 msgid "Также другие услуги"
 msgstr ""
 
-#: templates/base.html:46 templates/base.html:151
+#: templates/base.html:46 templates/base.html:143
 msgid "Умный дом"
 msgstr ""
 
-#: templates/base.html:77 templates/base.html:112
+#: templates/base.html:71 templates/base.html:104
 msgid "Записаться<span> на встречу</span>"
 msgstr ""
 
-#: templates/base.html:82 templates/base.html:130
+#: templates/base.html:76 templates/base.html:122
 msgid "Ночь"
 msgstr ""
 
-#: templates/base.html:90 templates/base.html:138 templates/base.html:208
+#: templates/base.html:84 templates/base.html:130 templates/base.html:200
 msgid "Меню"
 msgstr ""
 
-#: templates/base.html:124 templates/base.html:201 templates/base.html:286
+#: templates/base.html:116 templates/base.html:193 templates/base.html:278
 msgid "Поиск по сайту"
 msgstr ""
 
-#: templates/base.html:167 templates/base.html:275
+#: templates/base.html:159 templates/base.html:267
 msgid "Написать в WhatsApp"
 msgstr ""
 
-#: templates/base.html:176
+#: templates/base.html:168
 msgid "Как проехать"
 msgstr ""
 
-#: templates/base.html:220
+#: templates/base.html:212
 msgid "Наши услуги"
 msgstr ""
 
-#: templates/base.html:244
+#: templates/base.html:236
 msgid "Цены"
 msgstr ""
 
-#: templates/base.html:248 templates/base.html:296
+#: templates/base.html:240 templates/base.html:288
 msgid "Лицензия"
 msgstr ""
 
-#: templates/base.html:310
+#: templates/base.html:302
 msgid "Показать на карте"
 msgstr ""
 
-#: templates/base.html:336
+#: templates/base.html:328
 msgid "Компания Умный дом"
 msgstr ""
 
-#: templates/base.html:342
+#: templates/base.html:334
 msgid "Политика конфиденциальности"
 msgstr ""
 
-#: templates/base.html:348
+#: templates/base.html:340
 msgid "Дизайн и разработка"
 msgstr ""
 
@@ -230,4 +232,32 @@ msgstr ""
 
 #: templates/blocks/modal-night.html:16
 msgid "Отменить"
+msgstr ""
+
+#: templates/search/search.html:12 templates/search/search.html:22
+msgid "Результаты запроса по:"
+msgstr ""
+
+#: templates/search/search.html:24
+msgid "Введите текст запроса"
+msgstr ""
+
+#: templates/search/search.html:36
+msgid "Страницы"
+msgstr ""
+
+#: templates/search/search.html:42
+msgid "Услуги"
+msgstr ""
+
+#: templates/search/search.html:70
+msgid "По Вашему запросу информации на сайте не найдено."
+msgstr ""
+
+#: templates/search/search.html:76
+msgid "Страницы:"
+msgstr ""
+
+#: templates/search/search.html:85
+msgid "Воспользуйтесь панелью поиска"
 msgstr ""
