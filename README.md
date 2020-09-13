@@ -60,54 +60,49 @@ import six
 ```
 .env/lib/python3.7/site-packages/haystack/inputs.py
 ```
-
 исправляем строку с импортом, вместо
 ```
 from django.utils.encoding import force_text, python_2_unicode_compatible
 ```
-
 добвляем
 ```
 from django.utils.encoding import force_text
 from six import python_2_unicode_compatible
 ```
 
-### Миграции для базы данных
+### Миграции для базы данных и создание суперпользователя
 
-    python manage.py migrate
+```
+python manage.py migrate
+python manage.py createsuperuser
+```
 
-### Создаем суперпользователя
+### django-modeltranslation
 
-    python manage.py createsuperuser
+#### Синхронизируем поля модели
+```
+python manage.py sync_translation_fields
+```
 
+#### Если нужно перенести данные, которые были в модели изначально, в поля созданные django-modeltranslation
 
-#### Наполнить базу данных тестывыми данными
+```
+python manage.py update_translation_fields
+```
+
+### Наполнить бд тестывыми данными
 
 ```
 python manage.py loaddata fixtures/db.json
 ```
 
-#### Сохранить данные из бд в fixtures
+#### Если нужно сохранить данные из бд в fixtures
 
 ```
 python manage.py dumpdata capture main services --indent 2 > fixtures/db.json
 ```
 
-### Индексирование для haystack
+### Если необходимо сделать индексирование для haystack
 
 `python manage.py rebuild_index` или `python manage.py update_index`
 
-
-### django-modeltranslation
-
-#### Синхронизируем поля модели
-
-```
-python manage.py sync_translation_field
-```
-
-#### Добавленные к модели новые поля наполняем данными, которые были в модели изначально
-
-```
-python manage.py update_translation_fields
-```

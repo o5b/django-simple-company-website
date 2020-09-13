@@ -5,7 +5,7 @@ SECRET_KEY = "{{ secret_key }}"
 DEBUG = False
 ALLOWED_HOSTS = []
 ADMINS = (
-    # ('Oleg', 'admin@localhost'),
+    # ('Admin', 'admin@localhost'),
 )
 
 DJANGO_APPS = [
@@ -26,7 +26,6 @@ THIRD_APPS = [
     'django_cleanup.apps.CleanupConfig',
     'easy_thumbnails',
     'haystack',
-    # 'modeltranslation',
     'rosetta',
     'singlemodeladmin',
 ]
