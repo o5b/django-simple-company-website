@@ -24,6 +24,7 @@ THIRD_APPS = [
     'ckeditor_uploader',
     'ckeditor',
     'django_cleanup.apps.CleanupConfig',
+    'django_object_actions',
     'easy_thumbnails',
     'haystack',
     'rosetta',
