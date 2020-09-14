@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-13 14:31+0300\n"
+"POT-Creation-Date: 2020-09-14 10:53+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -54,7 +54,7 @@ msgstr ""
 #: applications/services/templates/services/price_list.html:24
 #: applications/services/templates/services/service_detail.html:31
 #: applications/services/templates/services/service_detail.html:67
-#: templates/search/search.html:40
+#: templates/404.html:24 templates/500.html:24 templates/search/search.html:40
 msgid "Главная"
 msgstr ""
 
@@ -107,6 +107,74 @@ msgstr ""
 
 #: applications/services/templates/services/service_detail.html:214
 msgid "Также другие услуги"
+msgstr ""
+
+#: templates/404.html:6
+msgid "404 ошибка — страница не найдена"
+msgstr ""
+
+#: templates/404.html:15 templates/404.html:28
+msgid "Страница не найдена"
+msgstr ""
+
+#: templates/404.html:42
+msgid ""
+"Добрый день! Скорее всего страница не найдена, т.к. мы недавно запустили "
+"новую версию сайта. Поисковые системы ещё не успели переиндексировать "
+"многочисленные изменения. Пожалуйста, найдите нужную Вам информацию, "
+"воспользовавшись меню, либо используя поиск по сайту (верхний правый угол)."
+msgstr ""
+
+#: templates/404.html:46
+msgid "К сожалению, введенный Вами адрес недоступен."
+msgstr ""
+
+#: templates/404.html:47
+msgid "Этому может быть несколько объяснений"
+msgstr ""
+
+#: templates/404.html:51
+msgid "Страница удалена (из-за утраты актуальности информации)"
+msgstr ""
+
+#: templates/404.html:52
+msgid "Страница перенесена в другое место"
+msgstr ""
+
+#: templates/404.html:53
+msgid ""
+"Возможно, при вводе адреса была пропущена какая-то буква (на самом деле, у "
+"нас самих так часто получается)"
+msgstr ""
+
+#: templates/404.html:57 templates/500.html:55
+msgid "Перейти на главную страницу"
+msgstr ""
+
+#: templates/500.html:6
+msgid "500 ошибка — Ошибка на сервере"
+msgstr ""
+
+#: templates/500.html:15 templates/500.html:28
+msgid "Ошибка на сервере"
+msgstr ""
+
+#: templates/500.html:42
+msgid "К сожалению, что-то пошло не так."
+msgstr ""
+
+#: templates/500.html:43
+msgid "Мы уже работаем над решением проблемы."
+msgstr ""
+
+#: templates/500.html:47
+msgid ""
+"Повторите Ваш запрос спустя некоторое время. На восстановление "
+"работоспособности сайта нам нужно ещё несколько минут."
+msgstr ""
+
+#: templates/500.html:51
+msgid "Спасибо за понимание!"
 msgstr ""
 
 #: templates/base.html:46 templates/base.html:143

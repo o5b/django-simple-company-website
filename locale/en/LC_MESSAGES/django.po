@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-09-13 14:31+0300\n"
-"PO-Revision-Date: 2020-09-13 14:32+0202\n"
+"POT-Creation-Date: 2020-09-14 10:53+0300\n"
+"PO-Revision-Date: 2020-09-14 11:02+0202\n"
 "Last-Translator: b'  <admin@admin.com>'\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
@@ -53,7 +53,7 @@ msgstr "About company"
 #: applications/services/templates/services/price_list.html:24
 #: applications/services/templates/services/service_detail.html:31
 #: applications/services/templates/services/service_detail.html:67
-#: templates/search/search.html:40
+#: templates/404.html:24 templates/500.html:24 templates/search/search.html:40
 msgid "Главная"
 msgstr "Home"
 
@@ -107,6 +107,107 @@ msgstr "Service cost"
 #: applications/services/templates/services/service_detail.html:214
 msgid "Также другие услуги"
 msgstr "Also other services"
+
+#: templates/404.html:6
+msgid "404 ошибка — страница не найдена"
+msgstr "404 error - page not found"
+
+#: templates/404.html:15 templates/404.html:28
+msgid "Страница не найдена"
+msgstr "Page not found"
+
+#: templates/404.html:42
+#| msgid ""
+#| "\n"
+#| "\t\t\t\t\t\t<p>\n"
+#| "\t\t\t\t\t\t\tДобрый день! Скорее всего страница не найдена, т.к. мы недавно запустили новую версию сайта. Поисковые системы ещё не успели переиндексировать многочисленные изменения. Пожалуйста, найдите нужную Вам информацию, воспользовавшись меню, либо используя поиск по сайту (верхний правый угол).\n"
+#| "\t\t\t\t\t\t</p>\n"
+#| "\t\t\t\t\t\t"
+msgid ""
+"Добрый день! Скорее всего страница не найдена, т.к. мы недавно запустили "
+"новую версию сайта. Поисковые системы ещё не успели переиндексировать "
+"многочисленные изменения. Пожалуйста, найдите нужную Вам информацию, "
+"воспользовавшись меню, либо используя поиск по сайту (верхний правый угол)."
+msgstr ""
+"Good day! Most likely the page was not found. we recently launched a new "
+"version of the site. Search engines have not yet re-indexed numerous "
+"changes. Please find the information you need using the menu or using the "
+"website search (upper right corner)."
+
+#: templates/404.html:46
+msgid "К сожалению, введенный Вами адрес недоступен."
+msgstr "Sorry, the address you entered is not available."
+
+#: templates/404.html:47
+msgid "Этому может быть несколько объяснений"
+msgstr "There may be several explanations for this."
+
+#: templates/404.html:51
+msgid "Страница удалена (из-за утраты актуальности информации)"
+msgstr ""
+"The page has been removed (due to the loss of relevance of information)"
+
+#: templates/404.html:52
+#| msgid "Страница не найдена"
+msgid "Страница перенесена в другое место"
+msgstr "Page not found"
+
+#: templates/404.html:53
+#| msgid ""
+#| "\n"
+#| "\t\t\t\t\t\t\t<li>Страница удалена (из-за утраты актуальности информации)</li>\n"
+#| "\t\t\t\t\t\t\t<li>Страница перенесена в другое место</li>\n"
+#| "\t\t\t\t\t\t\t<li>Возможно, при вводе адреса была пропущена какая-то буква (на самом деле, у нас самих так часто получается)</li>"
+msgid ""
+"Возможно, при вводе адреса была пропущена какая-то буква (на самом деле, у "
+"нас самих так часто получается)"
+msgstr ""
+"Perhaps a letter was missing when entering the address (in fact, we "
+"ourselves often get it)"
+
+#: templates/404.html:57 templates/500.html:55
+msgid "Перейти на главную страницу"
+msgstr "Go to home page"
+
+#: templates/500.html:6
+msgid "500 ошибка — Ошибка на сервере"
+msgstr "Error 500 - Server error"
+
+#: templates/500.html:15 templates/500.html:28
+msgid "Ошибка на сервере"
+msgstr "Server error"
+
+#: templates/500.html:42
+msgid "К сожалению, что-то пошло не так."
+msgstr "Unfortunately, something went wrong."
+
+#: templates/500.html:43
+msgid "Мы уже работаем над решением проблемы."
+msgstr "We are already working on a solution to the problem."
+
+#: templates/500.html:47
+#| msgid ""
+#| "\n"
+#| "\t\t\t\t\t\t<p>\n"
+#| "\t\t\t\t\t\t\tПовторите Ваш запрос спустя некоторое время. На восстановление работоспособности сайта нам нужно ещё несколько минут.\n"
+#| "\t\t\t\t\t\t</p>\n"
+#| "\t\t\t\t\t\t"
+msgid ""
+"Повторите Ваш запрос спустя некоторое время. На восстановление "
+"работоспособности сайта нам нужно ещё несколько минут."
+msgstr ""
+"Repeat your request after a while. We need a few more minutes to restore the"
+" site to work."
+
+#: templates/500.html:51
+#| msgid ""
+#| "\n"
+#| "\t\t\t\t\t\t<p>\n"
+#| "\t\t\t\t\t\t\tСпасибо за понимание!\n"
+#| "\t\t\t\t\t\t</p>\n"
+#| "\t\t\t\t\t\t"
+msgid "Спасибо за понимание!"
+msgstr "Thank you for understanding!"
 
 #: templates/base.html:46 templates/base.html:143
 msgid "Умный дом"
@@ -257,7 +358,6 @@ msgid "Страницы"
 msgstr "Pages:"
 
 #: templates/search/search.html:42
-#| msgid "Об услуге"
 msgid "Услуги"
 msgstr "Services"
 
@@ -272,6 +372,34 @@ msgstr "Pages:"
 #: templates/search/search.html:85
 msgid "Воспользуйтесь панелью поиска"
 msgstr "Use the search bar"
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\t\t\t\t\t<p>\n"
+#~ "\t\t\t\t\t\t\tК сожалению, введенный Вами адрес недоступен.<br>\n"
+#~ "\t\t\t\t\t\t\tЭтому может быть несколько объяснений:\n"
+#~ "\t\t\t\t\t\t</p>\n"
+#~ "\t\t\t\t\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "<p>\n"
+#~ "Unfortunately, the address you entered is not available. <br>\n"
+#~ "There can be several explanations for this:\n"
+#~ "</p>"
+
+#~ msgid ""
+#~ "\n"
+#~ "\t\t\t\t\t\t<p>\n"
+#~ "\t\t\t\t\t\t\tК сожалению, что-то пошло не так.<br>\n"
+#~ "\t\t\t\t\t\t\tМы уже работаем над решением проблемы.\n"
+#~ "\t\t\t\t\t\t</p>\n"
+#~ "\t\t\t\t\t\t"
+#~ msgstr ""
+#~ "\n"
+#~ "<p>\n"
+#~ "Unfortunately, something went wrong. <br>\n"
+#~ "We are already working on a solution to the problem.\n"
+#~ "</p>"
 
 #, fuzzy
 #~ msgid "О компании:"
