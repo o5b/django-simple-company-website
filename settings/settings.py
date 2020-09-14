@@ -5,7 +5,7 @@ SECRET_KEY = "{{ secret_key }}"
 DEBUG = False
 ALLOWED_HOSTS = []
 ADMINS = (
-    # ('Admin', 'admin@localhost'),
+    ('Admin', 'admin@localhost'),
 )
 
 DJANGO_APPS = [
