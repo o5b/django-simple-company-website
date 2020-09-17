@@ -6,6 +6,7 @@ from django.template.loader import render_to_string
 from django.utils.translation import gettext_lazy as _
 
 from applications.main.models import Preference
+from .tasks import appointment_created
 
 
 class Appointment(models.Model):
@@ -50,24 +51,8 @@ class Appointment(models.Model):
         if len(phone_list) != 12:
             raise ValidationError('Неверный номер телефона')
 
-    def mail_admin(self):
-        preference = Preference.objects.first()
-        if preference:
-            content = render_to_string(
-                'capture/letters/mail_admin_appointment.html',
-                {'object': self, 'preference': preference},
-            )
-            email_list = preference.email_appointment.split('\r\n')
-            if email_list:
-                msg = send_mail(
-                    subject='SmartHome. Запись на встречу. #{}'.format(self.pk),
-                    message=content,
-                    from_email=settings.DEFAULT_FROM_EMAIL,
-                    recipient_list=email_list,
-                    html_message=content,
-                )
-                return msg
-        return False
+    def mail_appointment(self):
+        appointment_created.delay(self.id)
 
     def __str__(self):
         return self.phone

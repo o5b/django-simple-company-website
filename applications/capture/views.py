@@ -30,4 +30,4 @@ class AppointmentCreateView(AjaxFormMixin, CreateView):
     ]
 
     def mail_object(self):
-        self.object.mail_admin()
+        self.object.mail_appointment()

@@ -39,7 +39,7 @@ Recommend installation virtualenv in `.env` folder in project folder.
 
 ### Проблема с haystack
 
-В Django 3 удалили пакет six из django.utils и это приводить к ошибке при его импорте в haystack. Исправить это можно несколькими способами.
+В Django 3 удалили пакет six из django.utils и это приводит к ошибке при его импорте в haystack. Исправить это можно несколькими способами.
 
 1) Установить `six` в виртуальное окружение:
 ```
@@ -106,3 +106,22 @@ python manage.py dumpdata capture main services --indent 2 > fixtures/db.json
 
 `python manage.py rebuild_index` или `python manage.py update_index`
 
+### Celery - для выполнения асинхронных задач
+
+В качестве брокера используется Redis (должна быть установленна и запущена). Запуск celery:
+
+```
+cd django-simple-company-website/
+source .env/bin/activate
+celery -A settings worker -l info
+```
+
+Для мониторинга можно использовать flower:
+
+```
+cd django-simple-company-website/
+source .env/bin/activate
+celery -A settings flower
+```
+
+затем открываем в браузере: `http://localhost:5555/`
