@@ -47,25 +47,40 @@ npm start
 
 ### The haystack problem
 
-Django 3 removed the six package from django.utils and this results in an error importing it into the haystack. There are several ways to fix this.
+**Django 3** removed the **six** package from **django.utils** and this results in an error importing it into the **haystack**. There are several ways to fix this.
 
-1) Install `six` in virtual environment:
+1) Install **six** in virtual environment:
 
 ```
 pip install six
 ```
 
-in the haystack package change, where necessary, import from:
-`from django.utils import six`
-to
-`import six`
+in the **haystack** package change, where necessary, import from:
 
-2)In order not to change the line with the import of the `six` package, you can add the `six` package file yourself (for example, by copying `.env/lib/python3.7/site-packages/six.py`) to django.utils (`.env/lib/python3.7/site-packages/django/utils/`)
+```
+from django.utils import six
+```
+
+to
+
+```
+import six
+```
+
+2)In order not to change the line with the import of the **six** package, you can add the **six** package file yourself (for example, by copying `.env/lib/python3.7/site-packages/six.py`) to **django.utils** (`.env/lib/python3.7/site-packages/django/utils/`)
 
 We also fix the import line in the file
-`.env/lib/python3.7/site-packages/haystack/inputs.py`
+
+```
+.env/lib/python3.7/site-packages/haystack/inputs.py
+```
+
 instead
-`from django.utils.encoding import force_text, python_2_unicode_compatible`
+
+```
+from django.utils.encoding import force_text, python_2_unicode_compatible
+```
+
 add
 
 ```
@@ -120,9 +135,9 @@ python manage.py update_index
 
 ### Celery is used to perform asynchronous tasks
 
-`Redis` is used as a broker (must be installed and running).
+**Redis** is used as a broker (must be installed and running).
 
-Running `celery`:
+Running **Celery**:
 
 ```
 cd django-simple-company-website/
@@ -130,7 +145,7 @@ source .env/bin/activate
 celery -A settings worker -l info
 ```
 
-You can use `flower` to monitor tasks:
+You can use **Flower** to monitor tasks:
 
 ```
 cd django-simple-company-website/
@@ -146,7 +161,7 @@ then open the page in the browser: `http://localhost:5555/`
 
 ## Структура
 
-Рекомендуется устанавливать virtualenv в `.env` папку в папке проекта.
+Рекомендуется устанавливать virtualenv в папку `.env` в папку проекта.
 
 ```
 /.git
@@ -175,23 +190,27 @@ then open the page in the browser: `http://localhost:5555/`
 
 ### Сервер (в консоли терминала)
 
- python manage.py runserver localhost:8000
+```
+python manage.py runserver localhost:8000
+```
 
 ### Фронтенд (в другой консоли терминала)
 
- npm start
+```
+npm start
+```
 
 ### Проблема с haystack
 
-В Django 3 удалили пакет six из django.utils и это приводит к ошибке при его импорте в haystack. Исправить это можно несколькими способами.
+В **Django 3** удалили пакет **six** из **django.utils** и это приводит к ошибке при его импорте в **haystack**. Исправить это можно несколькими способами.
 
-1) Установить `six` в виртуальное окружение:
+1) Установить **six** в виртуальное окружение:
 
 ```
 pip install six
 ```
 
-а в пакете haystack изменить, где надо, импорт с:
+а в пакете **haystack** изменить, где надо, импорт с:
 
 ```
 from django.utils import six
@@ -203,7 +222,7 @@ from django.utils import six
 import six
 ```
 
-2)Чтобы не менять строку с импортом пакета `six` можно самостоятельно добавить файл пакета six (например скопировав `.env/lib/python3.7/site-packages/six.py`)  в django.utils (`.env/lib/python3.7/site-packages/django/utils/`)
+2)Чтобы не менять строку с импортом пакета **six** можно самостоятельно добавить файл пакета **six** (например скопировав `.env/lib/python3.7/site-packages/six.py`)  в **django.utils** (`.env/lib/python3.7/site-packages/django/utils/`)
 
 Также исправляем строку с импортом, в файле
 
@@ -259,13 +278,19 @@ python manage.py dumpdata capture main services --indent 2 > fixtures/db.json
 
 ### Если необходимо сделать индексирование для haystack
 
-`python manage.py rebuild_index`
+```
+python manage.py rebuild_index
+```
+
 или
-`python manage.py update_index`
+
+```
+python manage.py update_index
+```
 
 ### Celery - для выполнения асинхронных задач
 
-В качестве брокера используется `Redis` (должна быть установленна и запущена). Запуск `celery`:
+В качестве брокера используется **Redis** (должна быть установленна и запущена). Запуск **Celery**:
 
 ```
 cd django-simple-company-website/
@@ -273,7 +298,7 @@ source .env/bin/activate
 celery -A settings worker -l info
 ```
 
-Для мониторинга можно использовать `flower`:
+Для мониторинга можно использовать **Flower**:
 
 ```
 cd django-simple-company-website/
