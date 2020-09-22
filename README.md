@@ -1,4 +1,4 @@
-# English Readme
+# English
 
 For `Django >= 2.0` compatible with `Python >= 3.5`
 
@@ -155,7 +155,7 @@ celery -A settings flower
 
 then open the page in the browser: `http://localhost:5555/`
 
-# Russian Readme
+# Russian
 
 Для `Django >= 2.0` совместно с `Python >= 3.5`
 
