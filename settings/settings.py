@@ -28,7 +28,7 @@ THIRD_APPS = [
     'haystack',
     'rosetta',
     'singlemodeladmin',
-    'django_cleanup.apps.CleanupConfig', # django_cleanup should be placed last in INSTALLED_APPS.
+    # 'django_cleanup.apps.CleanupConfig', # django_cleanup should be placed last in INSTALLED_APPS.
 ]
 
 CUSTOM_APPS = [
@@ -38,7 +38,9 @@ CUSTOM_APPS = [
     'applications.services',
 ]
 
-INSTALLED_APPS = ['modeltranslation'] + DJANGO_APPS + THIRD_APPS + CUSTOM_APPS
+INSTALLED_APPS = ['modeltranslation'] + DJANGO_APPS + THIRD_APPS + CUSTOM_APPS + \
+    ['django_cleanup.apps.CleanupConfig',]
+# django_cleanup should be placed last in INSTALLED_APPS.
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
