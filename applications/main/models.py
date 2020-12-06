@@ -287,3 +287,56 @@ class Preference(models.Model):
 
     def __str__(self):
         return 'Настройки'
+
+
+class IndexVideo(Common):
+    """
+    Видео на главной странице
+    """
+
+    youtube_link = models.CharField(
+        verbose_name='Ссылка на видео',
+        max_length=200,
+        help_text='Ссылка на YouTube',
+    )
+
+    services = models.ManyToManyField(
+        verbose_name='Услуги',
+        to='services.Service',
+        blank=True,
+        related_name='videos',
+    )
+
+    order = models.PositiveIntegerField(
+        verbose_name='Порядок',
+        default=0,
+        blank=False,
+        null=False,
+    )
+
+    class Meta:
+        ordering = ['order']
+        verbose_name = 'главная страница - видео'
+        verbose_name_plural = 'главная страница - видео'
+
+    def get_services(self):
+        return self.services.filter(status=Common.PUBLISHED)
+
+    def get_youtube_id(self):
+        if 'youtube.com' in self.youtube_link:
+            pattern = r'(?:https?:\/\/)?(?:[0-9A-Z-]+\.)?(?:youtube|youtu|youtube-nocookie)\.(?:com|be)\/(?:watch\?v=|watch\?.+&v=|embed\/|v\/|.+\?v=)?([^&=\n%\?]{11})'
+            g = re.search(pattern, self.youtube_link)
+            if g:
+                return g.groups()[0]
+        return self.youtube_link
+
+    def get_youtube_photo(self):
+        return f'https://img.youtube.com/vi/{self.get_youtube_id()}/0.jpg'
+    get_youtube_photo.short_description = 'Превью'
+
+    def thumb_photo(self):
+        return mark_safe(f'<img src="{self.get_youtube_photo()}" width="100">')
+    thumb_photo.short_description = 'Превью'
+
+    def __str__(self):
+        return self.youtube_link

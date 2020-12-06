@@ -40,3 +40,10 @@ class PageAdmin(CommonAdmin, TabbedTranslationAdmin):
 @admin.register(models.Preference)
 class PreferenceAdmin(SingleModelAdmin, TabbedTranslationAdmin):
     pass
+
+
+@admin.register(models.IndexVideo)
+class IndexVideoAdmin(SortableAdminMixin, CommonAdmin):
+    list_display = ['thumb_photo', 'status']
+    search_fields = ['youtube_link']
+    filter_horizontal = ['services']

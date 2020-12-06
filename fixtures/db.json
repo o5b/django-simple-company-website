@@ -44,6 +44,61 @@
   }
 },
 {
+  "model": "capture.appointment",
+  "pk": 17,
+  "fields": {
+    "phone": "+11 (111) 111-11-11",
+    "name": "Сузанна",
+    "comment": "Need to meet",
+    "time": "18.09.2020 12:00",
+    "created": "2020-09-17T14:22:07.119Z"
+  }
+},
+{
+  "model": "capture.appointment",
+  "pk": 18,
+  "fields": {
+    "phone": "+22 (222) 222-22-22",
+    "name": "Анна",
+    "comment": "Давайте обсудим наше сотрудничество",
+    "time": "17.09.2020 12:00",
+    "created": "2020-09-17T14:24:13.430Z"
+  }
+},
+{
+  "model": "capture.appointment",
+  "pk": 19,
+  "fields": {
+    "phone": "+33 (333) 333-33-33",
+    "name": "Петя Петоров",
+    "comment": "Need to meet",
+    "time": "18.09.2020 12:00",
+    "created": "2020-09-17T14:25:35.791Z"
+  }
+},
+{
+  "model": "capture.appointment",
+  "pk": 20,
+  "fields": {
+    "phone": "+44 (444) 444-44-44",
+    "name": "Олег",
+    "comment": "Need to meet",
+    "time": "18.09.2020 12:00",
+    "created": "2020-09-17T14:29:30.134Z"
+  }
+},
+{
+  "model": "capture.appointment",
+  "pk": 21,
+  "fields": {
+    "phone": "+99 (999) 999-99-99",
+    "name": "",
+    "comment": "",
+    "time": "",
+    "created": "2020-09-17T14:42:58.874Z"
+  }
+},
+{
   "model": "main.slide",
   "pk": 1,
   "fields": {
@@ -370,6 +425,62 @@
     "site_photo": "",
     "email": "oursmarthome@email.com",
     "email_appointment": "ceo@mail.com\r\ndeputy.ceo@mail.com\r\nmanager@mail.com"
+  }
+},
+{
+  "model": "main.indexvideo",
+  "pk": 1,
+  "fields": {
+    "status": "published",
+    "created": "2020-12-06T12:49:50.515Z",
+    "modified": "2020-12-06T12:49:50.515Z",
+    "youtube_link": "https://www.youtube.com/watch?v=O1smZXcsz3g",
+    "order": 1,
+    "services": [
+      1
+    ]
+  }
+},
+{
+  "model": "main.indexvideo",
+  "pk": 2,
+  "fields": {
+    "status": "published",
+    "created": "2020-12-06T12:59:55.329Z",
+    "modified": "2020-12-06T12:59:55.329Z",
+    "youtube_link": "https://www.youtube.com/watch?v=sgoiMXSo8D8",
+    "order": 4,
+    "services": [
+      1
+    ]
+  }
+},
+{
+  "model": "main.indexvideo",
+  "pk": 3,
+  "fields": {
+    "status": "published",
+    "created": "2020-12-06T13:20:39.617Z",
+    "modified": "2020-12-06T13:20:39.617Z",
+    "youtube_link": "https://www.youtube.com/watch?v=zo18FBppZwM",
+    "order": 3,
+    "services": [
+      1
+    ]
+  }
+},
+{
+  "model": "main.indexvideo",
+  "pk": 4,
+  "fields": {
+    "status": "published",
+    "created": "2020-12-06T13:37:04.076Z",
+    "modified": "2020-12-06T13:37:04.076Z",
+    "youtube_link": "https://www.youtube.com/watch?v=H6VVPpeTaYc",
+    "order": 2,
+    "services": [
+      2
+    ]
   }
 },
 {

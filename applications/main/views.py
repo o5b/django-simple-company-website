@@ -13,6 +13,7 @@ class IndexView(TemplateView):
         context['slide_list'] = models.Slide.published.all()
         context['index_content'] = models.Index.objects.first()
         context['popular_list'] = Popular.published.all()
+        context['indexvideo_list'] = models.IndexVideo.published.all().order_by('order')[:6]
         return context
 
 

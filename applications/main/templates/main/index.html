@@ -132,6 +132,47 @@
 			</div>
 		</section>
 	{% endif %}
+
+	{% if indexvideo_list %}
+		<section class="padding-bottom-40">
+			<div class="container js-swiper" data-swiper='{"slidesPerView": "2", "loop": false, "spaceBetween": 20, "breakpoints": []}'>
+				<div class="row padding-top-30 padding-bottom-40">
+					<div class="col">
+						<div class="swiper-container">
+							<div class="swiper-wrapper">
+								{% for indexvideo in indexvideo_list %}
+									<div class="swiper-slide">
+										{% include "blocks/indexvideo.html" with indexvideo=indexvideo %}
+									</div>
+								{% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-9 offset-lg-3">
+						<div class="arrow__block">
+							<a class="arrow arrow-left js-swiper-left" href="javascript:void(0);"></a>
+
+							<ul class="arrow__points js-swiper-pagination"></ul>
+
+							<a class="arrow arrow-right js-swiper-right" href="javascript:void(0);"></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	{% endif %}
 {% endblock content %}
 
-{% block footer_js %}{% endblock footer_js %}
+{% block footer_js %}
+
+	<script src="https://cdn.jsdelivr.net/npm/modal-video@2/js/jquery-modal-video.min.js"></script>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/modal-video@2/css/modal-video.min.css">
+
+	<script>
+		$('.js-modal-video').modalVideo();
+	</script>
+
+{% endblock footer_js %}

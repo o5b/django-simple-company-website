@@ -23,12 +23,12 @@ THIRD_APPS = [
     'adminsortable2',
     'ckeditor_uploader',
     'ckeditor',
-    'django_cleanup.apps.CleanupConfig',
     'django_object_actions',
     'easy_thumbnails',
     'haystack',
     'rosetta',
     'singlemodeladmin',
+    'django_cleanup.apps.CleanupConfig', # django_cleanup should be placed last in INSTALLED_APPS.
 ]
 
 CUSTOM_APPS = [
